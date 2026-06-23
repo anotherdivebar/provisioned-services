@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SITE } from "@/lib/constants";
 import "./globals.css";
 
-const plusJakarta = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
 });
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${SITE.name} | Facility Maintenance, Repairs & Vendor Coordination`,
     description:
-      "Responsive facility support for restaurants, retailers, and multi-site operators.",
+      "National facility support and vendor coordination for restaurant, retail, and multi-site operators.",
     type: "website",
   },
 };
@@ -33,8 +33,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${plusJakarta.variable} h-full`}>
-      <body className="flex min-h-full flex-col antialiased">
+    <html lang="en" className={`${inter.variable} h-full`}>
+      <body className="flex min-h-full flex-col bg-background text-foreground antialiased">
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />

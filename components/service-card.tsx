@@ -26,7 +26,7 @@ export function PremiumServiceCard({
   return (
     <article
       className={cn(
-        "group relative flex h-full flex-col overflow-hidden rounded-2xl border border-navy-100/80 bg-white shadow-sm transition-all duration-500 hover:-translate-y-1.5 hover:border-amber-300/60 hover:shadow-xl hover:shadow-navy-950/8",
+        "group relative flex h-full flex-col overflow-hidden rounded-lg border border-navy-100/80 bg-white shadow-sm transition-all duration-500 hover:-translate-y-0.5 hover:shadow-md",
         className
       )}
     >

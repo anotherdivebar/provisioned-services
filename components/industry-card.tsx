@@ -26,12 +26,12 @@ export function IndustryCard({
     <Link
       href={link}
       className={cn(
-        "group relative flex h-full flex-col overflow-hidden rounded-2xl border border-navy-100/80 bg-white p-6 shadow-sm transition-all duration-500 hover:-translate-y-1.5 hover:border-amber-300/50 hover:shadow-xl hover:shadow-navy-950/8 sm:p-7",
+        "group relative flex h-full flex-col overflow-hidden rounded-lg border border-navy-100/80 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-amber-300/50 hover:shadow-md sm:p-7",
         className
       )}
     >
       <div className="mb-6 flex items-start justify-between">
-        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-950 font-mono text-sm font-bold text-amber-400 transition-colors group-hover:bg-amber-500 group-hover:text-navy-950">
+        <div className="flex h-12 w-12 items-center justify-center rounded-md bg-navy-950 font-mono text-sm font-bold text-amber-400 transition-colors group-hover:bg-amber-500 group-hover:text-navy-950">
           {code}
         </div>
         <span className="font-mono text-xs font-bold tabular-nums text-steel-300">

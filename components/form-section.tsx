@@ -22,7 +22,7 @@ export function FormSection({
   return (
     <section
       className={cn(
-        "overflow-hidden rounded-2xl border border-navy-100/80 bg-white shadow-sm",
+        "overflow-hidden rounded-lg border border-navy-100/80 bg-white shadow-sm",
         className
       )}
     >

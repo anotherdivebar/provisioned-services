@@ -1,27 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8f9fb;
-  --foreground: #0b1f3a;
-  --navy-950: #071526;
-  --navy-900: #0b1f3a;
-  --navy-800: #122a4a;
-  --navy-700: #1a355c;
-  --navy-200: #c9d4e3;
-  --navy-100: #e4eaf2;
-  --navy-50: #f3f6fa;
-  --charcoal-950: #111827;
-  --steel-700: #4b5563;
-  --steel-600: #6b7280;
-  --steel-500: #9ca3af;
-  --steel-400: #b8c0cc;
-  --steel-300: #d1d5db;
-  --amber-600: #d97706;
-  --amber-500: #f59e0b;
-  --amber-400: #fbbf24;
-  --amber-200: #fde68a;
+  --background: #f7f8fa;
+  --foreground: #0a1628;
+  --navy-950: #060f1c;
+  --navy-900: #0a1628;
+  --navy-800: #12243d;
+  --navy-700: #1a3354;
+  --navy-200: #c5d0de;
+  --navy-100: #e2e8f0;
+  --navy-50: #f1f4f8;
+  --charcoal-950: #0f1419;
+  --steel-700: #475569;
+  --steel-600: #64748b;
+  --steel-500: #94a3b8;
+  --steel-400: #b0bac7;
+  --steel-300: #cbd5e1;
+  --amber-600: #b45309;
+  --amber-500: #d97706;
+  --amber-400: #f59e0b;
+  --amber-200: #fcd34d;
   --amber-50: #fffbeb;
-  --off-white: #f8f9fb;
+  --off-white: #f7f8fa;
+  --surface-muted: #eef1f5;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
 }
 
 @theme inline {
@@ -46,7 +50,8 @@
   --color-amber-200: var(--amber-200);
   --color-amber-50: var(--amber-50);
   --color-off-white: var(--off-white);
-  --font-sans: var(--font-plus-jakarta);
+  --color-surface-muted: var(--surface-muted);
+  --font-sans: var(--font-inter);
 }
 
 html {
@@ -62,34 +67,31 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-plus-jakarta), system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 .network-bg {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 48px 48px;
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
 
 .noise-texture {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
 }
 
 .hero-gradient {
-  background:
-    radial-gradient(ellipse 80% 60% at 20% 40%, rgba(251, 191, 36, 0.08), transparent 50%),
-    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(59, 130, 246, 0.06), transparent 45%),
-    linear-gradient(165deg, #071526 0%, #0b1f3a 45%, #111827 100%);
+  background: linear-gradient(180deg, #060f1c 0%, #0a1628 55%, #0f1419 100%);
 }
 
 .card-shine {
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.06) 0%,
-    transparent 40%,
-    transparent 100%
+    rgba(255, 255, 255, 0.04) 0%,
+    transparent 45%
   );
 }
 
@@ -99,12 +101,30 @@ body {
 }
 
 .section-number {
-  font-size: clamp(4rem, 10vw, 8rem);
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
   line-height: 1;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.04em;
-  color: rgba(251, 191, 36, 0.08);
+  color: rgba(217, 119, 6, 0.07);
   user-select: none;
+}
+
+.enterprise-card {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--navy-100);
+  background: #fff;
+}
+
+.enterprise-card-dark {
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.prose-enterprise {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--steel-600);
 }
 
 @keyframes accordion-down {

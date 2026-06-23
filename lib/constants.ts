@@ -622,3 +622,112 @@ export const FAQ_ITEMS = [
       "Service providers can apply through our vendor application form. Our team reviews submissions and follows up when services align with current client needs.",
   },
 ] as const;
+
+export const ENTERPRISE_PROOF = [
+  {
+    label: "Designed for",
+    detail: "Restaurant, retail, franchise, and multi-site portfolios",
+  },
+  {
+    label: "Supports",
+    detail: "Emergency response through planned rollouts and refreshes",
+  },
+  {
+    label: "Coordinated across",
+    detail: "HVAC, refrigeration, flooring, and general facility trades",
+  },
+  {
+    label: "Accountability through",
+    detail: "Intake, scope, dispatch, execution, validation, and closeout",
+  },
+] as const;
+
+export const OPERATIONAL_MODULES = [
+  {
+    title: "Multi-site coordination",
+    description:
+      "Built to support operators managing facility work across many locations through a structured intake and dispatch model.",
+  },
+  {
+    title: "Emergency response readiness",
+    description:
+      "Designed for urgent repairs and rapid-response situations where downtime directly affects revenue and operations.",
+  },
+  {
+    title: "Trade and vendor orchestration",
+    description:
+      "Coordinates qualified service partners across facility disciplines with clear scope and follow-through.",
+  },
+  {
+    title: "Project closeout discipline",
+    description:
+      "Work is validated against scope and documented so facilities teams have accountability from request to completion.",
+  },
+] as const;
+
+export const SERVICE_GROUPS = [
+  {
+    id: "maintenance-response",
+    title: "Maintenance & Emergency Response",
+    description:
+      "Day-to-day upkeep and urgent repair coordination for locations that need to stay open.",
+    outcome:
+      "Reduced coordination overhead and faster path from issue to resolution.",
+    slugs: [
+      "day-to-day-maintenance",
+      "emergency-repairs",
+      "crisis-rapid-response",
+    ] as const,
+  },
+  {
+    id: "specialty-trades",
+    title: "Cooler, Freezer & Flooring",
+    description:
+      "Specialty facility work that protects product safety, customer experience, and brand presentation.",
+    outcome:
+      "Planned execution around operating constraints and site-specific requirements.",
+    slugs: ["cooler-freezer", "flooring", "restaurant-facility-support", "retail-facility-support"] as const,
+  },
+  {
+    id: "projects-rollouts",
+    title: "Installations, Rollouts & Remodels",
+    description:
+      "Multi-location programs, equipment installations, and refresh work with consistent standards.",
+    outcome:
+      "Disciplined sequencing and closeout across active business environments.",
+    slugs: ["installations", "rollouts", "remodels-refreshes"] as const,
+  },
+  {
+    id: "coordination",
+    title: "Vendor Coordination & Project Management",
+    description:
+      "One accountable partner for service-provider management, project oversight, and quality validation.",
+    outcome:
+      "Clear communication and accountable execution from intake through closeout.",
+    slugs: ["vendor-coordination", "project-management", "quality-assurance-closeout"] as const,
+  },
+] as const;
+
+export const ORGANIZATION_AREAS = [
+  {
+    title: "Client Operations",
+    description:
+      "Supports operator intake, communication, and service coordination across maintenance, repairs, and project work.",
+  },
+  {
+    title: "Project Coordination",
+    description:
+      "Manages scope, scheduling, trade sequencing, and closeout for rollouts, refreshes, and multi-site programs.",
+  },
+  {
+    title: "Vendor Network",
+    description:
+      "Recruits, qualifies, and coordinates service partners aligned to coverage, trade capability, and quality standards.",
+  },
+] as const;
+
+export const CONTACT_ASSURANCES = [
+  "Structured intake captures location, urgency, trade, and scope",
+  "Follow-up aligned to your stated timeline and operating constraints",
+  "No obligation — initial requests help us understand fit and coverage",
+] as const;

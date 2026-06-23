@@ -30,10 +30,6 @@ export function SiteHeader() {
     };
   }, [mobileOpen]);
 
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
-
   return (
     <header
       className={cn(

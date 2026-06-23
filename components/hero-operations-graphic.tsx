@@ -26,7 +26,7 @@ export function HeroOperationsGraphic() {
         className="absolute -inset-6 rounded-3xl bg-amber-500/8 blur-3xl"
         aria-hidden="true"
       />
-      <div className="relative overflow-hidden rounded-2xl border border-white/12 bg-[#0a1628]/90 shadow-2xl shadow-black/40 backdrop-blur-md">
+      <div className="relative overflow-hidden rounded-lg border border-white/12 bg-[#0a1628]/90 shadow-2xl shadow-black/40 backdrop-blur-md">
         <VisualPattern variant="blueprint" opacity={0.5} />
         <div className="card-shine absolute inset-0" aria-hidden="true" />
 
@@ -55,7 +55,7 @@ export function HeroOperationsGraphic() {
         <div className="relative grid gap-4 p-5 sm:grid-cols-4 sm:p-6">
           {flowSteps.map((step, i) => {
             const content = (
-              <div className="group relative rounded-xl border border-white/10 bg-navy-900/70 p-4 transition-colors hover:border-amber-500/30 hover:bg-navy-900">
+              <div className="group relative rounded-lg border border-white/10 bg-navy-900/70 p-4 transition-colors hover:border-amber-500/30 hover:bg-navy-900">
                 <span className="text-[10px] font-bold tabular-nums text-amber-400/80">
                   {step.num}
                 </span>

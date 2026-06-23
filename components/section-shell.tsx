@@ -22,7 +22,7 @@ interface SectionShellProps {
 const toneStyles: Record<SectionTone, string> = {
   dark: "bg-navy-950 text-white",
   light: "bg-white text-navy-950",
-  muted: "bg-[#eef2f7] text-navy-950",
+  muted: "bg-surface-muted text-navy-950",
   white: "bg-off-white text-navy-950",
   gradient:
     "bg-gradient-to-br from-navy-900 via-[#0f2847] to-navy-950 text-white",

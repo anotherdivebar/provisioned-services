@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
-import { SectionHeading } from "@/components/section-heading";
+import { SectionShell } from "@/components/section-shell";
 import { CtaBand } from "@/components/cta-band";
+import { FeatureList } from "@/components/enterprise/feature-list";
 import { Button } from "@/components/ui/button";
 import { INDUSTRIES } from "@/lib/constants";
 
@@ -17,73 +18,53 @@ export default function IndustriesPage() {
     <>
       <PageHero
         eyebrow="Industries"
-        title="Facility support tailored to your operating environment"
+        title="Facility support aligned to your operating environment"
         description="Provisioned supports operators across restaurants, retail, fitness, veterinary, franchise, and multi-site portfolios—with coordination built for active business environments."
         primaryCta={{ label: "Request Service", href: "/contact" }}
       />
 
-      <section className="py-20 sm:py-24">
+      <SectionShell tone="light" className="py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="space-y-20">
-            {INDUSTRIES.map((industry) => (
+          <div className="space-y-16">
+            {INDUSTRIES.map((industry, index) => (
               <article
                 key={industry.slug}
                 id={industry.slug}
-                className="scroll-mt-24 grid gap-10 border-b border-navy-100 pb-20 last:border-b-0 last:pb-0 lg:grid-cols-2"
+                className="scroll-mt-24 grid gap-8 border-b border-navy-100 pb-16 last:border-b-0 last:pb-0 lg:grid-cols-2 lg:gap-12"
               >
                 <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-amber-600">
-                    {industry.title}
+                  <p className="font-mono text-[11px] font-bold text-amber-600">
+                    {String(index + 1).padStart(2, "0")} · {industry.title}
                   </p>
-                  <h2 className="mt-3 text-3xl font-bold text-navy-950">
+                  <h2 className="mt-3 text-2xl font-bold leading-snug text-navy-950 sm:text-3xl">
                     {industry.description}
                   </h2>
-                  <p className="mt-6 leading-relaxed text-steel-600">
-                    {industry.howWeHelp}
-                  </p>
+                  <p className="prose-enterprise mt-5">{industry.howWeHelp}</p>
                   <Button asChild className="mt-6">
                     <Link href="/contact">Request Service</Link>
                   </Button>
                 </div>
 
-                <div className="space-y-8">
-                  <div className="rounded-xl border border-navy-100 bg-off-white p-6">
-                    <h3 className="font-semibold text-navy-950">
-                      Common facility pain points
+                <div className="grid gap-5">
+                  <div className="enterprise-card bg-off-white p-6">
+                    <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-navy-950">
+                      Common pain points
                     </h3>
-                    <ul className="mt-4 space-y-3">
-                      {industry.painPoints.map((point) => (
-                        <li
-                          key={point}
-                          className="flex gap-3 text-sm text-steel-600"
-                        >
-                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" />
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
+                    <FeatureList items={industry.painPoints} className="mt-4" />
                   </div>
 
-                  <div className="rounded-xl border border-navy-100 bg-white p-6 shadow-sm">
-                    <h3 className="font-semibold text-navy-950">Example services</h3>
-                    <ul className="mt-4 space-y-3">
-                      {industry.services.map((service) => (
-                        <li
-                          key={service}
-                          className="flex gap-3 text-sm text-steel-600"
-                        >
-                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-navy-700" />
-                          {service}
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="enterprise-card p-6">
+                    <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-navy-950">
+                      Example services
+                    </h3>
+                    <FeatureList items={industry.services} className="mt-4" />
                   </div>
                 </div>
               </article>
             ))}
           </div>
         </div>
-      </section>
+      </SectionShell>
 
       <CtaBand
         title="Need responsive facility support across your portfolio?"
