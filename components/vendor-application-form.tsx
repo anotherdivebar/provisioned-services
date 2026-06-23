@@ -24,29 +24,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {
+  FormSection,
+  VENDOR_FORM_SECTIONS,
+} from "@/components/form-section";
+import { FadeUp } from "@/components/motion/animations";
 import { cn } from "@/lib/utils";
 
-function FormSection({
-  title,
-  description,
-  children,
-}: {
-  title: string;
-  description?: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <section className="rounded-xl border border-navy-100 bg-white p-6 shadow-sm sm:p-8">
-      <div className="mb-6 border-b border-navy-100 pb-4">
-        <h2 className="text-xl font-bold text-navy-950">{title}</h2>
-        {description ? (
-          <p className="mt-2 text-sm text-steel-600">{description}</p>
-        ) : null}
-      </div>
-      {children}
-    </section>
-  );
-}
+const TOTAL = VENDOR_FORM_SECTIONS.length;
 
 function YesNoSelect({
   id,
@@ -164,29 +149,63 @@ export function VendorApplicationForm() {
 
   if (submitState === "success") {
     return (
-      <div
-        className="rounded-xl border border-emerald-200 bg-emerald-50 p-8 text-center"
-        role="status"
-      >
-        <h3 className="text-xl font-semibold text-navy-950">
-          Thanks for applying.
-        </h3>
-        <p className="mt-3 text-steel-600">
-          Our team will review your information and follow up if your services
-          align with current client needs.
-        </p>
-      </div>
+      <FadeUp>
+        <div
+          className="rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-white p-10 text-center shadow-sm"
+          role="status"
+        >
+          <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500/15 text-2xl font-bold text-emerald-600">
+            ✓
+          </div>
+          <h3 className="text-2xl font-bold text-navy-950">Thanks for applying.</h3>
+          <p className="mx-auto mt-3 max-w-md text-steel-600">
+            Our team will review your information and follow up if your services
+            align with current client needs.
+          </p>
+        </div>
+      </FadeUp>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-8" noValidate>
+    <div className="grid gap-10 lg:grid-cols-[1fr_280px] lg:items-start">
+      <aside className="order-first hidden lg:order-last lg:block">
+        <div className="sticky top-24 rounded-2xl border border-navy-100 bg-white p-6 shadow-sm">
+          <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-amber-600">
+            Application overview
+          </p>
+          <p className="mt-2 text-sm text-steel-600">
+            Complete all sections below. Required fields are marked with *.
+          </p>
+          <ol className="mt-6 space-y-3">
+            {VENDOR_FORM_SECTIONS.map((section, i) => (
+              <li key={section} className="flex items-center gap-3 text-sm">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-navy-950 text-[10px] font-bold text-amber-400">
+                  {i + 1}
+                </span>
+                <span className="text-steel-700">{section}</span>
+              </li>
+            ))}
+          </ol>
+          <div className="mt-6 rounded-lg border border-navy-100 bg-off-white p-4 text-xs leading-relaxed text-steel-500">
+            Document uploads are optional for now. File storage will be connected
+            in a future update.
+          </div>
+        </div>
+      </aside>
+
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-8" noValidate>
       <div className="absolute -left-[9999px]" aria-hidden="true">
         <Label htmlFor="website">Website</Label>
         <Input id="website" tabIndex={-1} autoComplete="off" {...register("website")} />
       </div>
 
-      <FormSection title="Company Information">
+      <FormSection
+        step={1}
+        totalSteps={TOTAL}
+        title="Company Information"
+        helperText="Legal business name and primary contact details."
+      >
         <div className="grid gap-6 sm:grid-cols-2">
           <div className="space-y-2 sm:col-span-2">
             <Label htmlFor="companyName">Company name *</Label>
@@ -288,7 +307,12 @@ export function VendorApplicationForm() {
         </div>
       </FormSection>
 
-      <FormSection title="Business Details">
+      <FormSection
+        step={2}
+        totalSteps={TOTAL}
+        title="Business Details"
+        helperText="Licensing, insurance, and business structure."
+      >
         <div className="grid gap-6 sm:grid-cols-2">
           <div className="space-y-2">
             <Label htmlFor="yearsInBusiness">Years in business *</Label>
@@ -431,7 +455,9 @@ export function VendorApplicationForm() {
       </FormSection>
 
       <FormSection
-        title="Trades / Services"
+        step={3}
+        totalSteps={TOTAL}
+        title="Services & Trades"
         description="Select all trades and services your company provides."
       >
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -458,7 +484,12 @@ export function VendorApplicationForm() {
         ) : null}
       </FormSection>
 
-      <FormSection title="Operational Fit">
+      <FormSection
+        step={4}
+        totalSteps={TOTAL}
+        title="Operational Fit"
+        helperText="Help us understand your availability and experience."
+      >
         <div className="grid gap-6 sm:grid-cols-2">
           <div className="space-y-2">
             <Label htmlFor="emergencyResponse">Emergency response? *</Label>
@@ -526,7 +557,7 @@ export function VendorApplicationForm() {
         </div>
       </FormSection>
 
-      <FormSection title="References">
+      <FormSection step={5} totalSteps={TOTAL} title="References">
         <div className="grid gap-6 sm:grid-cols-2">
           {[
             ["reference1Company", "Reference 1 company *"],
@@ -551,7 +582,12 @@ export function VendorApplicationForm() {
         </div>
       </FormSection>
 
-      <FormSection title="Document Uploads">
+      <FormSection
+        step={6}
+        totalSteps={TOTAL}
+        title="Documents"
+        description="Upload placeholders — file storage not connected yet."
+      >
         <div className="grid gap-4 sm:grid-cols-2">
           <UploadPlaceholder label="Certificate of Insurance" />
           <UploadPlaceholder label="W-9" />
@@ -560,7 +596,7 @@ export function VendorApplicationForm() {
         </div>
       </FormSection>
 
-      <FormSection title="Compliance / Agreement">
+      <FormSection step={7} totalSteps={TOTAL} title="Agreement">
         <div className="space-y-4">
           {(
             [
@@ -608,7 +644,7 @@ export function VendorApplicationForm() {
         </p>
       ) : null}
 
-      <Button type="submit" size="lg" disabled={submitState === "loading"}>
+      <Button type="submit" size="lg" className="w-full sm:w-auto shadow-lg shadow-amber-500/15" disabled={submitState === "loading"}>
         {submitState === "loading" ? (
           <>
             <Loader2 className="h-4 w-4 animate-spin" />
@@ -619,5 +655,6 @@ export function VendorApplicationForm() {
         )}
       </Button>
     </form>
+    </div>
   );
 }

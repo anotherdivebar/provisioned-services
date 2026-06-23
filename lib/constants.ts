@@ -37,51 +37,117 @@ export const WHAT_WE_DO = [
     title: "Restaurant Facility Support",
     description:
       "Maintenance, repairs, and project coordination built for active dining environments.",
-    icon: "utensils",
+    category: "Restaurant",
+    code: "RS",
+    index: "01",
+    visual: "from-[#1a2f4a] via-[#243b55] to-[#0f1f33]",
+    caption: "Commercial kitchen & dining operations",
   },
   {
     title: "Retail Facility Support",
     description:
       "Responsive support for high-traffic retail locations that need minimal disruption.",
-    icon: "store",
+    category: "Retail",
+    code: "RT",
+    index: "02",
+    visual: "from-[#1e3348] via-[#2a4158] to-[#152536]",
+    caption: "Storefront & back-of-house support",
   },
   {
     title: "Cooler / Freezer Work",
     description:
       "Repairs, retrofits, and restoration coordination to protect temperature-sensitive operations.",
-    icon: "thermometer",
+    category: "Refrigeration",
+    code: "CF",
+    index: "03",
+    visual: "from-[#0f2a3d] via-[#1a3a52] to-[#0a1e2e]",
+    caption: "Walk-in cooler & freezer coordination",
   },
   {
     title: "Flooring Solutions",
     description:
       "Replacement and refresh work planned around operating hours and customer flow.",
-    icon: "layers",
+    category: "Flooring",
+    code: "FL",
+    index: "04",
+    visual: "from-[#2a3544] via-[#3d4a5c] to-[#1f2836]",
+    caption: "Minimal-disruption floor replacement",
   },
   {
     title: "Installation & Rollouts",
     description:
       "Disciplined execution for equipment, fixtures, and multi-location rollout programs.",
-    icon: "package",
+    category: "Rollouts",
+    code: "IN",
+    index: "05",
+    visual: "from-[#1a2840] via-[#253a55] to-[#121f32]",
+    caption: "Multi-location installation programs",
   },
   {
     title: "Crisis / Rapid Response",
     description:
       "Fast coordination when a location cannot wait for a standard maintenance window.",
-    icon: "zap",
+    category: "Rapid Response",
+    code: "RR",
+    index: "06",
+    visual: "from-[#2a1f1f] via-[#3d2a28] to-[#1a1414]",
+    caption: "Emergency dispatch & field coordination",
   },
   {
     title: "Day-to-Day Maintenance",
     description:
       "Reliable facility upkeep across single sites and multi-location portfolios.",
-    icon: "wrench",
+    category: "Maintenance",
+    code: "DM",
+    index: "07",
+    visual: "from-[#1e2d3d] via-[#2c4054] to-[#152230]",
+    caption: "Portfolio maintenance support",
   },
   {
     title: "Emergency Repairs",
     description:
       "Clear intake, dispatch, and closeout when urgent repairs threaten operations.",
-    icon: "alert-circle",
+    category: "Emergency",
+    code: "ER",
+    index: "08",
+    visual: "from-[#2d2438] via-[#3a3050] to-[#1a1525]",
+    caption: "Urgent repair coordination",
   },
 ] as const;
+
+export const VENDOR_BENEFITS = [
+  {
+    title: "Clear scopes",
+    description:
+      "Defined work packages and expectations before dispatch—no ambiguity on site.",
+  },
+  {
+    title: "Professional coordination",
+    description:
+      "Organized communication, scheduling, and closeout that respects your time.",
+  },
+  {
+    title: "Long-term partnership potential",
+    description:
+      "Opportunities aligned to your trade, coverage area, and quality standards.",
+  },
+  {
+    title: "Quality-driven work",
+    description:
+      "Client environments where responsiveness, professionalism, and execution matter.",
+  },
+] as const;
+
+export const CASE_STUDY_VISUALS: Record<string, string> = {
+  "restaurant-grand-opening": "from-[#1a2f4a] via-[#2d4a62] to-[#0f1f33]",
+  "retail-emergency-repair": "from-[#2a3544] via-[#3d4f62] to-[#1a2230]",
+  "multi-location-refresh": "from-[#1e3348] via-[#2f4a60] to-[#152536]",
+  "flooring-replacement": "from-[#2c3e50] via-[#405568] to-[#1e2a36]",
+  "cooler-freezer-restoration": "from-[#0f2a3d] via-[#1f4058] to-[#081820]",
+  "installation-rollout": "from-[#1a2840] via-[#2d4260] to-[#121f32]",
+  "retail-reimage": "from-[#243447] via-[#354d62] to-[#182430]",
+  "veterinary-facility-repair": "from-[#2a3a42] via-[#3d5058] to-[#1a282e]",
+};
 
 export const INDUSTRIES = [
   {

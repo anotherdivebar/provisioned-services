@@ -4,16 +4,16 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 disabled:pointer-events-none disabled:opacity-50 active:scale-[0.98]",
   {
     variants: {
       variant: {
         default:
-          "bg-amber-500 text-navy-950 hover:bg-amber-400 shadow-sm hover:shadow-md",
+          "bg-amber-500 text-navy-950 hover:bg-amber-400 shadow-md shadow-amber-500/20 hover:shadow-lg hover:shadow-amber-500/25",
         secondary:
           "border border-white/20 bg-white/5 text-white hover:bg-white/10 hover:border-white/30",
         outline:
-          "border border-navy-700 bg-transparent text-navy-950 hover:bg-navy-50 dark:text-white dark:border-white/20 dark:hover:bg-white/5",
+          "border border-navy-200 bg-white text-navy-950 hover:border-amber-300 hover:bg-amber-50/50 shadow-sm",
         ghost: "text-navy-700 hover:bg-navy-100 dark:text-white dark:hover:bg-white/10",
         link: "text-amber-600 underline-offset-4 hover:underline dark:text-amber-400",
       },

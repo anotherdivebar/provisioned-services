@@ -17,8 +17,8 @@ export default function ApplyToBeAVendorPage() {
         description="Tell us about your company, capabilities, coverage area, and qualifications. Our team will review your information and follow up if your services align with current client needs."
       />
 
-      <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <section className="border-t border-navy-100 bg-[#eef2f7] py-16 sm:py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <VendorApplicationForm />
         </div>
       </section>
