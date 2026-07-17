@@ -31,7 +31,7 @@ export function IndustryCard({
       )}
     >
       <div className="mb-6 flex items-start justify-between">
-        <div className="flex h-12 w-12 items-center justify-center rounded-md bg-navy-950 font-mono text-sm font-bold text-amber-400 transition-colors group-hover:bg-amber-500 group-hover:text-navy-950">
+        <div className="flex h-12 w-12 items-center justify-center rounded-md bg-navy-950 font-mono text-sm font-bold text-amber-400 transition-colors group-hover:bg-amber-500 group-hover:text-white">
           {code}
         </div>
         <span className="font-mono text-xs font-bold tabular-nums text-steel-300">

@@ -3,140 +3,103 @@ import { ArrowRight } from "lucide-react";
 import { HomeHero } from "@/components/home-hero";
 import { SectionHeading } from "@/components/section-heading";
 import { SectionShell } from "@/components/section-shell";
-import { StatsStrip } from "@/components/stats-strip";
 import { PremiumServiceCard } from "@/components/service-card";
-import { IndustryCard } from "@/components/industry-card";
 import { ProcessTimeline } from "@/components/process-timeline";
 import { CaseStudyCard } from "@/components/case-study-card";
 import { CtaBand } from "@/components/cta-band";
 import { VendorCTA } from "@/components/vendor-cta";
 import { EnterpriseProofStrip } from "@/components/enterprise/enterprise-proof-strip";
 import { OpsModules } from "@/components/enterprise/ops-modules";
-import {
-  FadeUp,
-  StaggerContainer,
-  StaggerItem,
-} from "@/components/motion/animations";
+import { FadeUp, StaggerContainer, StaggerItem } from "@/components/motion/animations";
 import { Button } from "@/components/ui/button";
-import {
-  CASE_STUDIES,
-  INDUSTRIES,
-  WHAT_WE_DO,
-  WHY_PROVISIONED,
-} from "@/lib/constants";
+import { CASE_STUDIES, WHAT_WE_DO, WHY_PROVISIONED } from "@/lib/constants";
 
 export default function HomePage() {
   return (
     <>
       <HomeHero />
       <EnterpriseProofStrip />
-      <StatsStrip />
 
-      <SectionShell tone="light" className="py-20 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <FadeUp>
-            <SectionHeading
-              eyebrow="Operating Model"
-              sectionNumber="01"
-              title="Built for multi-site facility operations"
-              description="Provisioned is designed to help operators coordinate facility work with clear scope, responsive communication, and accountable closeout."
-            />
-          </FadeUp>
-          <FadeUp className="mt-10">
-            <OpsModules />
-          </FadeUp>
+      <SectionShell tone="light" className="py-20 sm:py-28">
+        <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+            <FadeUp>
+              <SectionHeading
+                eyebrow="Built for operations"
+                sectionNumber="01"
+                title="Less chasing. More resolved."
+                description="PSI gives busy facility teams a clear path from issue intake to accountable closeout—without adding another layer of chaos."
+              />
+              <Button asChild variant="outline" size="lg" className="mt-8">
+                <Link href="/about">
+                  How we operate
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </FadeUp>
+            <FadeUp delay={0.08}>
+              <OpsModules />
+            </FadeUp>
+          </div>
         </div>
       </SectionShell>
 
-      <SectionShell tone="white" className="py-20 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionShell tone="muted" className="py-20 sm:py-28">
+        <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
           <FadeUp>
-            <SectionHeading
-              eyebrow="Capabilities"
-              sectionNumber="02"
-              title="Facility support across maintenance, response, and projects"
-              description="Service modules designed for restaurant, retail, and multi-site operators that cannot afford extended downtime."
-            />
+            <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+              <SectionHeading
+                eyebrow="Core capabilities"
+                sectionNumber="02"
+                title="One call covers the work that keeps locations open."
+                description="Responsive support across the facility services operators rely on most."
+              />
+              <Button asChild variant="outline" size="lg" className="w-fit shrink-0">
+                <Link href="/services">
+                  Explore all services
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </FadeUp>
           <StaggerContainer className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-            {WHAT_WE_DO.map((item) => (
+            {WHAT_WE_DO.slice(0, 4).map((item) => (
               <StaggerItem key={item.title}>
                 <PremiumServiceCard {...item} />
               </StaggerItem>
             ))}
           </StaggerContainer>
-          <FadeUp className="mt-10">
-            <Button asChild variant="outline" size="lg">
-              <Link href="/services">
-                View full service catalog
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          </FadeUp>
         </div>
       </SectionShell>
 
-      <SectionShell tone="muted" className="py-20 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <FadeUp>
-            <SectionHeading
-              eyebrow="Industries"
-              sectionNumber="03"
-              title="Support aligned to how each operator runs"
-              description="Facility coordination tailored to the schedules, standards, and pain points of active commercial environments."
-            />
-          </FadeUp>
-          <StaggerContainer className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {INDUSTRIES.map((industry, index) => (
-              <StaggerItem key={industry.slug}>
-                <IndustryCard
-                  title={industry.title}
-                  description={industry.description}
-                  slug={industry.slug}
-                  index={index}
-                />
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
-      </SectionShell>
-
-      <SectionShell tone="dark" pattern="grid" dividerTop className="py-20 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <FadeUp>
-            <SectionHeading
-              light
-              eyebrow="Why Provisioned"
-              sectionNumber="04"
-              title="One accountable partner when facility work cannot wait"
-              description="Operators choose Provisioned for coordination discipline—not another vendor relationship to manage."
-            />
-          </FadeUp>
-
-          <div className="mt-12 grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-            <FadeUp delay={0.08}>
-              <blockquote className="enterprise-card-dark h-full p-6 sm:p-8">
-                <p className="text-lg font-medium leading-relaxed text-white sm:text-xl">
-                  Clear scope, fast dispatch, accountable execution—built for
-                  brands that cannot afford downtime.
+      <SectionShell tone="dark" pattern="grid" dividerTop className="py-20 sm:py-28">
+        <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16">
+            <FadeUp>
+              <SectionHeading
+                light
+                eyebrow="The PSI standard"
+                sectionNumber="03"
+                title="Facility support should feel clear—even when the problem is not."
+              />
+              <blockquote className="mt-8 border-l-2 border-amber-400 pl-5">
+                <p className="text-lg font-medium leading-relaxed text-white/90">
+                  “Clear scope, responsive dispatch, accountable execution—built
+                  for brands that cannot afford downtime.”
                 </p>
-                <footer className="mt-6 text-[11px] font-bold uppercase tracking-[0.2em] text-amber-400">
+                <footer className="mt-4 text-[10px] font-bold uppercase tracking-[0.22em] text-amber-400">
                   Provisioned operating standard
                 </footer>
               </blockquote>
             </FadeUp>
 
-            <StaggerContainer className="grid gap-4 sm:grid-cols-2">
-              {WHY_PROVISIONED.map((item, index) => (
+            <StaggerContainer className="grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-2">
+              {WHY_PROVISIONED.slice(0, 4).map((item, index) => (
                 <StaggerItem key={item.title}>
-                  <article className="enterprise-card-dark h-full p-5">
-                    <span className="font-mono text-[11px] font-bold text-amber-400/80">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <h3 className="mt-2 font-semibold text-white">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-steel-400">
-                      {item.description}
-                    </p>
+                  <article className="h-full bg-navy-950/95 p-6 sm:p-7">
+                    <span className="font-mono text-[10px] font-bold text-amber-400">0{index + 1}</span>
+                    <h3 className="mt-5 text-lg font-semibold text-white">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-steel-400">{item.description}</p>
                   </article>
                 </StaggerItem>
               ))}
@@ -145,14 +108,14 @@ export default function HomePage() {
         </div>
       </SectionShell>
 
-      <SectionShell tone="light" className="py-20 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionShell tone="white" className="py-20 sm:py-28">
+        <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
           <FadeUp>
             <SectionHeading
-              eyebrow="Process"
-              sectionNumber="05"
-              title="From intake to closeout"
-              description="A consistent operating process designed for active business environments."
+              eyebrow="A repeatable process"
+              sectionNumber="04"
+              title="From first call to documented closeout."
+              description="A simple operating rhythm keeps urgent repairs and planned project work visible, organized, and moving forward."
             />
           </FadeUp>
           <div className="mt-14">
@@ -161,41 +124,43 @@ export default function HomePage() {
         </div>
       </SectionShell>
 
-      <VendorCTA />
-
-      <SectionShell tone="white" className="py-20 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionShell tone="light" className="border-t border-navy-100 py-20 sm:py-28">
+        <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
           <FadeUp>
-            <SectionHeading
-              eyebrow="Projects"
-              sectionNumber="06"
-              title="Representative project examples"
-              description="Illustrative scenarios showing the types of facility challenges Provisioned is built to support. Not client-specific case studies."
-            />
+            <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+              <SectionHeading
+                eyebrow="Representative work"
+                sectionNumber="05"
+                title="Proof lives in the way the work gets handled."
+                description="Illustrative project scenarios that show the facility challenges PSI is built to coordinate."
+              />
+              <Button asChild variant="outline" size="lg" className="w-fit shrink-0">
+                <Link href="/projects">
+                  View all project examples
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </FadeUp>
-          <StaggerContainer className="mt-12 grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
-            {CASE_STUDIES.slice(0, 6).map((project) => (
+          <StaggerContainer className="mt-12 grid gap-5 lg:grid-cols-3">
+            {CASE_STUDIES.slice(0, 3).map((project) => (
               <StaggerItem key={project.id}>
                 <CaseStudyCard {...project} />
               </StaggerItem>
             ))}
           </StaggerContainer>
-          <FadeUp className="mt-10">
-            <Button asChild variant="outline" size="lg">
-              <Link href="/projects">
-                View all project examples
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          </FadeUp>
+          <p className="mt-5 text-xs text-steel-500">Representative examples only; not client-specific case studies.</p>
         </div>
       </SectionShell>
 
+      <VendorCTA />
+
       <CtaBand
         variant="final"
-        title="Need a facilities partner who can keep up with your locations?"
+        title="Keep the next facility issue from becoming the next operational setback."
+        description="Tell us what is happening, where it is happening, and how quickly you need support."
         primaryCta={{ label: "Request Service", href: "/contact" }}
-        secondaryCta={{ label: "Apply to Be a Vendor", href: "/apply-to-be-a-vendor" }}
+        secondaryCta={{ label: "Explore Services", href: "/services" }}
       />
     </>
   );

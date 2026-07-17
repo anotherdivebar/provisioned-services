@@ -23,7 +23,7 @@ export function VendorCTA() {
               title="Great client outcomes start with great service partners."
               description="Provisioned works with responsive, insured, professional vendors to support active restaurants, retailers, and multi-site operators."
             />
-            <Button asChild size="lg" className="mt-8 shadow-lg shadow-amber-500/15">
+            <Button asChild size="lg" className="mt-8 bg-white text-brand-red hover:bg-brand-cream">
               <Link href="/apply-to-be-a-vendor">
                 Apply to Be a Vendor
                 <ArrowRight className="h-4 w-4" />

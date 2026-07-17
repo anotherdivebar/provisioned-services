@@ -21,13 +21,13 @@ interface SectionShellProps {
 
 const toneStyles: Record<SectionTone, string> = {
   dark: "bg-navy-950 text-white",
-  light: "bg-white text-navy-950",
+  light: "bg-brand-cream text-navy-950",
   muted: "bg-surface-muted text-navy-950",
   white: "bg-off-white text-navy-950",
   gradient:
-    "bg-gradient-to-br from-navy-900 via-[#0f2847] to-navy-950 text-white",
+    "bg-gradient-to-br from-brand-red via-[#7b1a04] to-navy-950 text-white",
   vendor:
-    "bg-gradient-to-br from-[#0c1e36] via-navy-900 to-[#162d4a] text-white",
+    "bg-gradient-to-br from-[#4f1105] via-brand-red-dark to-navy-950 text-white",
 };
 
 export function SectionShell({

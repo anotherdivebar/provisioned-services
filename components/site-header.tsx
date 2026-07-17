@@ -4,10 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { Menu, X } from "lucide-react";
-import { NAV_LINKS, SITE } from "@/lib/constants";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+import { NAV_LINKS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { BrandLogo } from "@/components/brand-logo";
 import { easeOut } from "@/components/motion/animations";
 
 export function SiteHeader() {
@@ -17,7 +18,7 @@ export function SiteHeader() {
   const reduceMotion = useReducedMotion();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -33,28 +34,22 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 transition-all duration-500",
+        "sticky top-0 z-50 border-b transition-all duration-300",
         scrolled
-          ? "border-b border-white/10 bg-navy-950/90 shadow-xl shadow-black/20 backdrop-blur-xl"
-          : "border-b border-transparent bg-navy-950/80 backdrop-blur-sm"
+          ? "border-navy-100 bg-brand-cream/95 shadow-sm backdrop-blur-xl"
+          : "border-transparent bg-brand-cream"
       )}
     >
-      <div className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="group flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-amber-500 font-mono text-xs font-bold text-navy-950 transition-transform group-hover:scale-105">
-            PS
-          </div>
-          <div className="flex flex-col">
-            <span className="text-base font-bold tracking-tight text-white sm:text-lg">
-              {SITE.shortName}
-            </span>
-            <span className="hidden text-[10px] font-semibold uppercase tracking-[0.22em] text-steel-400 sm:block">
-              Facility Support
-            </span>
-          </div>
+      <div className="mx-auto flex h-[4.75rem] max-w-[90rem] items-center justify-between px-4 sm:px-6 lg:px-8">
+        <Link
+          href="/"
+          className="group -ml-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-4"
+          aria-label="Provisioned Services home"
+        >
+          <BrandLogo priority className="h-12 w-44 transition-opacity group-hover:opacity-90 sm:w-48" />
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">
+        <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Main navigation">
           {NAV_LINKS.map((link) => {
             const active = pathname.startsWith(link.href);
             return (
@@ -62,33 +57,36 @@ export function SiteHeader() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "relative rounded-md px-3.5 py-2 text-sm font-medium transition-colors",
+                  "relative px-3.5 py-2 text-[13px] font-semibold transition-colors",
                   active
-                    ? "text-white"
-                    : "text-steel-400 hover:text-white"
+                    ? "text-brand-red"
+                    : "text-steel-700 hover:text-brand-red"
                 )}
               >
                 {link.label}
                 {active ? (
-                  <span className="absolute inset-x-3 -bottom-[1.35rem] h-0.5 rounded-full bg-amber-500" />
+                  <span className="absolute inset-x-3.5 -bottom-0.5 h-0.5 bg-brand-red" />
                 ) : null}
               </Link>
             );
           })}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
-          <Button asChild variant="secondary" size="sm" className="font-semibold">
-            <Link href="/contact">Request Service</Link>
+        <div className="hidden items-center gap-2 lg:flex">
+          <Button asChild variant="outline" size="sm">
+            <Link href="/apply-to-be-a-vendor">Vendor network</Link>
           </Button>
-          <Button asChild size="sm" className="font-semibold shadow-md shadow-amber-500/15">
-            <Link href="/apply-to-be-a-vendor">Apply to Be a Vendor</Link>
+          <Button asChild size="sm" className="group">
+            <Link href="/contact">
+              Request service
+              <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
           </Button>
         </div>
 
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-lg border border-white/10 p-2.5 text-white transition-colors hover:bg-white/5 lg:hidden"
+          className="inline-flex items-center justify-center rounded-full border border-navy-200 p-2.5 text-brand-ink transition-colors hover:border-brand-red hover:text-brand-red lg:hidden"
           aria-expanded={mobileOpen}
           aria-controls="mobile-nav"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -105,36 +103,41 @@ export function SiteHeader() {
             initial={reduceMotion ? false : { opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}
-            transition={{ duration: 0.25, ease: easeOut }}
-            className="fixed inset-x-0 top-[4.5rem] bottom-0 z-40 border-t border-white/10 bg-navy-950/98 backdrop-blur-xl lg:hidden"
+            transition={{ duration: 0.22, ease: easeOut }}
+            className="fixed inset-x-0 top-[4.75rem] bottom-0 z-40 border-t border-navy-100 bg-brand-cream lg:hidden"
           >
-            <nav className="flex h-full flex-col gap-1 overflow-y-auto px-4 py-6" aria-label="Mobile">
-              {NAV_LINKS.map((link, i) => (
+            <nav className="mx-auto flex h-full max-w-lg flex-col overflow-y-auto px-5 py-7" aria-label="Mobile navigation">
+              <p className="mb-5 text-[10px] font-bold uppercase tracking-[0.24em] text-steel-500">
+                Explore PSI
+              </p>
+              {NAV_LINKS.map((link, index) => (
                 <motion.div
                   key={link.href}
-                  initial={reduceMotion ? false : { opacity: 0, x: -12 }}
+                  initial={reduceMotion ? false : { opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.04, duration: 0.3, ease: easeOut }}
+                  transition={{ delay: index * 0.035, duration: 0.25, ease: easeOut }}
                 >
                   <Link
                     href={link.href}
+                    onClick={() => setMobileOpen(false)}
                     className={cn(
-                      "block rounded-lg px-4 py-3.5 text-lg font-medium transition-colors",
+                      "flex items-center justify-between border-b border-navy-100 py-4 text-2xl font-semibold tracking-tight",
                       pathname.startsWith(link.href)
-                        ? "bg-white/10 text-white"
-                        : "text-steel-300 hover:bg-white/5 hover:text-white"
+                        ? "text-brand-red"
+                        : "text-brand-ink"
                     )}
                   >
                     {link.label}
+                    <span className="text-sm font-normal text-steel-400">0{index + 1}</span>
                   </Link>
                 </motion.div>
               ))}
-              <div className="mt-6 flex flex-col gap-3 border-t border-white/10 pt-6">
-                <Button asChild variant="secondary" className="w-full">
-                  <Link href="/contact">Request Service</Link>
+              <div className="mt-8 grid gap-3">
+                <Button asChild size="lg" className="w-full">
+                  <Link href="/contact" onClick={() => setMobileOpen(false)}>Request service</Link>
                 </Button>
-                <Button asChild className="w-full">
-                  <Link href="/apply-to-be-a-vendor">Apply to Be a Vendor</Link>
+                <Button asChild variant="outline" size="lg" className="w-full">
+                  <Link href="/apply-to-be-a-vendor" onClick={() => setMobileOpen(false)}>Apply to be a vendor</Link>
                 </Button>
               </div>
             </nav>

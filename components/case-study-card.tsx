@@ -28,7 +28,7 @@ export function CaseStudyCard({
 }: CaseStudyCardProps) {
   const visual =
     (id && CASE_STUDY_VISUALS[id]) ||
-    "from-[#1a2f4a] via-[#2d4a62] to-[#0f1f33]";
+    "from-[#8d1d03] via-[#7b2815] to-[#2a1009]";
 
   return (
     <article
@@ -55,7 +55,7 @@ export function CaseStudyCard({
         <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-navy-950/20 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-6">
           <div className="flex flex-wrap gap-2">
-            <span className="rounded-full bg-amber-500 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-navy-950">
+            <span className="rounded-full bg-amber-500 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
               {projectType}
             </span>
             <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white/90 backdrop-blur-sm">

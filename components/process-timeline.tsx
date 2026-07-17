@@ -33,7 +33,7 @@ export function ProcessTimeline() {
                   className={cn(
                     "relative mx-auto mb-5 flex h-11 w-11 items-center justify-center rounded-full border-2 text-sm font-bold transition-all duration-300",
                     active === index
-                      ? "border-amber-500 bg-amber-500 text-navy-950 shadow-lg shadow-amber-500/25"
+                      ? "border-amber-500 bg-amber-500 text-white shadow-lg shadow-amber-500/25"
                       : "border-navy-200 bg-white text-navy-700 group-hover:border-amber-400 group-hover:text-amber-700"
                   )}
                 >
@@ -67,7 +67,7 @@ export function ProcessTimeline() {
                   aria-hidden="true"
                 />
               ) : null}
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-amber-500 bg-amber-500 text-sm font-bold text-navy-950">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-amber-500 bg-amber-500 text-sm font-bold text-white">
                 {step.step.replace("0", "")}
               </div>
               <div className="flex-1 rounded-xl border border-navy-100 bg-white p-5 shadow-sm">
@@ -86,7 +86,7 @@ export function ProcessTimeline() {
 
       {/* sticky visual panel - desktop */}
       <FadeUp delay={0.2} className="mt-12 hidden lg:block">
-        <div className="overflow-hidden rounded-2xl border border-navy-100 bg-gradient-to-br from-navy-950 via-navy-900 to-[#0f2038] p-8 text-white">
+        <div className="overflow-hidden rounded-2xl border border-navy-100 bg-gradient-to-br from-navy-950 via-navy-900 to-[#4f1105] p-8 text-white">
           <div className="grid items-center gap-8 lg:grid-cols-2">
             <div>
               <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-amber-400">

@@ -1,15 +1,8 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { Metadata, Viewport } from "next";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SITE } from "@/lib/constants";
 import "./globals.css";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: {
@@ -24,7 +17,19 @@ export const metadata: Metadata = {
     description:
       "National facility support and vendor coordination for restaurant, retail, and multi-site operators.",
     type: "website",
+    images: [
+      {
+        url: "/psi-logo.png",
+        width: 512,
+        height: 512,
+        alt: "Provisioned Services, Inc.",
+      },
+    ],
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#8d1d03",
 };
 
 export default function RootLayout({
@@ -33,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full`}>
+    <html lang="en" className="h-full">
       <body className="flex min-h-full flex-col bg-background text-foreground antialiased">
         <SiteHeader />
         <main className="flex-1">{children}</main>

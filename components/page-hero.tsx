@@ -37,21 +37,21 @@ export function PageHero({
     >
       {dark ? (
         <>
-          <VisualPattern variant="blueprint" opacity={0.2} />
-          <VisualPattern variant="noise" opacity={0.1} />
+          <VisualPattern variant="grid" opacity={0.15} />
+          <div className="brand-rings pointer-events-none absolute -right-48 top-0 h-[42rem] w-[42rem] opacity-60" aria-hidden="true" />
         </>
       ) : null}
 
-      <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
+      <div className="relative mx-auto max-w-[90rem] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <FadeUp duration={0.6}>
             {eyebrow ? (
-              <p className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.28em] text-amber-400">
+              <p className="mb-6 inline-flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.24em] text-white/75">
                 <span className="h-px w-6 bg-amber-400/60" aria-hidden="true" />
                 {eyebrow}
               </p>
             ) : null}
-            <h1 className="max-w-3xl text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl lg:leading-[1.05]">
+            <h1 className="max-w-4xl text-4xl font-semibold tracking-[-0.05em] sm:text-5xl lg:text-7xl lg:leading-[0.98]">
               {title}
             </h1>
             {description ? (
@@ -68,7 +68,7 @@ export function PageHero({
             {(primaryCta || secondaryCta) && (
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 {primaryCta ? (
-                  <Button asChild size="lg" className="shadow-lg shadow-amber-500/15">
+                  <Button asChild size="lg" className={cn(dark && "bg-white text-brand-red hover:bg-brand-cream")}>
                     <Link href={primaryCta.href}>
                       {primaryCta.label}
                       <ArrowRight className="h-4 w-4" />

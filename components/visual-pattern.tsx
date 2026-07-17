@@ -25,8 +25,8 @@ export function VisualPattern({
             backgroundImage: `
               linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
               linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
-              linear-gradient(rgba(251,191,36,0.06) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(251,191,36,0.06) 1px, transparent 1px)
+              linear-gradient(rgba(242,170,150,0.07) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(242,170,150,0.07) 1px, transparent 1px)
             `,
             backgroundSize: "80px 80px, 80px 80px, 20px 20px, 20px 20px",
           }}

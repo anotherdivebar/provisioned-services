@@ -40,7 +40,7 @@ export const WHAT_WE_DO = [
     category: "Restaurant",
     code: "RS",
     index: "01",
-    visual: "from-[#1a2f4a] via-[#243b55] to-[#0f1f33]",
+    visual: "from-[#8d1d03] via-[#a93618] to-[#451309]",
     caption: "Commercial kitchen & dining operations",
   },
   {
@@ -50,7 +50,7 @@ export const WHAT_WE_DO = [
     category: "Retail",
     code: "RT",
     index: "02",
-    visual: "from-[#1e3348] via-[#2a4158] to-[#152536]",
+    visual: "from-[#6a2516] via-[#9e4c34] to-[#2d1711]",
     caption: "Storefront & back-of-house support",
   },
   {
@@ -60,7 +60,7 @@ export const WHAT_WE_DO = [
     category: "Refrigeration",
     code: "CF",
     index: "03",
-    visual: "from-[#0f2a3d] via-[#1a3a52] to-[#0a1e2e]",
+    visual: "from-[#49160c] via-[#7d2d1a] to-[#1d100c]",
     caption: "Walk-in cooler & freezer coordination",
   },
   {
@@ -70,7 +70,7 @@ export const WHAT_WE_DO = [
     category: "Flooring",
     code: "FL",
     index: "04",
-    visual: "from-[#2a3544] via-[#3d4a5c] to-[#1f2836]",
+    visual: "from-[#7b4838] via-[#a8735f] to-[#39251e]",
     caption: "Minimal-disruption floor replacement",
   },
   {
@@ -80,7 +80,7 @@ export const WHAT_WE_DO = [
     category: "Rollouts",
     code: "IN",
     index: "05",
-    visual: "from-[#1a2840] via-[#253a55] to-[#121f32]",
+    visual: "from-[#8d1d03] via-[#73200e] to-[#2a0f08]",
     caption: "Multi-location installation programs",
   },
   {
@@ -90,7 +90,7 @@ export const WHAT_WE_DO = [
     category: "Rapid Response",
     code: "RR",
     index: "06",
-    visual: "from-[#2a1f1f] via-[#3d2a28] to-[#1a1414]",
+    visual: "from-[#a42609] via-[#6f1805] to-[#250d06]",
     caption: "Emergency dispatch & field coordination",
   },
   {
@@ -100,7 +100,7 @@ export const WHAT_WE_DO = [
     category: "Maintenance",
     code: "DM",
     index: "07",
-    visual: "from-[#1e2d3d] via-[#2c4054] to-[#152230]",
+    visual: "from-[#6a362b] via-[#875346] to-[#2b1b16]",
     caption: "Portfolio maintenance support",
   },
   {
@@ -110,7 +110,7 @@ export const WHAT_WE_DO = [
     category: "Emergency",
     code: "ER",
     index: "08",
-    visual: "from-[#2d2438] via-[#3a3050] to-[#1a1525]",
+    visual: "from-[#951f04] via-[#5a1809] to-[#24100b]",
     caption: "Urgent repair coordination",
   },
 ] as const;
@@ -139,14 +139,14 @@ export const VENDOR_BENEFITS = [
 ] as const;
 
 export const CASE_STUDY_VISUALS: Record<string, string> = {
-  "restaurant-grand-opening": "from-[#1a2f4a] via-[#2d4a62] to-[#0f1f33]",
-  "retail-emergency-repair": "from-[#2a3544] via-[#3d4f62] to-[#1a2230]",
-  "multi-location-refresh": "from-[#1e3348] via-[#2f4a60] to-[#152536]",
-  "flooring-replacement": "from-[#2c3e50] via-[#405568] to-[#1e2a36]",
-  "cooler-freezer-restoration": "from-[#0f2a3d] via-[#1f4058] to-[#081820]",
-  "installation-rollout": "from-[#1a2840] via-[#2d4260] to-[#121f32]",
-  "retail-reimage": "from-[#243447] via-[#354d62] to-[#182430]",
-  "veterinary-facility-repair": "from-[#2a3a42] via-[#3d5058] to-[#1a282e]",
+  "restaurant-grand-opening": "from-[#8d1d03] via-[#a63a1d] to-[#3a1108]",
+  "retail-emergency-repair": "from-[#6f2c1c] via-[#9a5944] to-[#2c1913]",
+  "multi-location-refresh": "from-[#4c1a10] via-[#813521] to-[#21100b]",
+  "flooring-replacement": "from-[#755044] via-[#9c7161] to-[#35261f]",
+  "cooler-freezer-restoration": "from-[#5c1b0d] via-[#8b321b] to-[#21100b]",
+  "installation-rollout": "from-[#8d1d03] via-[#6b210f] to-[#2b120b]",
+  "retail-reimage": "from-[#7b3523] via-[#a05b43] to-[#321b14]",
+  "veterinary-facility-repair": "from-[#644037] via-[#8e675b] to-[#2e211d]",
 };
 
 export const INDUSTRIES = [
