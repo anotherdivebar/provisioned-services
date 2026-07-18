@@ -8,6 +8,13 @@ import { easeOut, SlideInRight } from "@/components/motion/animations";
 import { HERO_TRUST_POINTS } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 
+const MOBILE_WORKFLOW_STEPS = [
+  "Intake",
+  "Dispatch",
+  "Execute",
+  "Closeout",
+] as const;
+
 export function HomeHero() {
   const reduceMotion = useReducedMotion();
 
@@ -32,9 +39,25 @@ export function HomeHero() {
             )}
           </div>
 
-          <SlideInRight delay={0.08} duration={0.6}>
+          <SlideInRight className="hidden lg:block" delay={0.08} duration={0.6}>
             <HeroOperationsGraphic />
           </SlideInRight>
+
+          <div className="rounded-2xl border border-white/15 bg-white/[0.08] p-5 backdrop-blur-sm lg:hidden">
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/55">
+              One accountable workflow
+            </p>
+            <ol className="mt-4 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-white/10 bg-white/10">
+              {MOBILE_WORKFLOW_STEPS.map((step, index) => (
+                <li key={step} className="bg-brand-red/80 px-4 py-3.5">
+                  <span className="font-mono text-[10px] text-white/45">
+                    0{index + 1}
+                  </span>
+                  <p className="mt-1 text-sm font-semibold text-white">{step}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
       </div>
 

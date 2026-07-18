@@ -1,4 +1,5 @@
 import { ENTERPRISE_PROOF } from "@/lib/constants";
+import { cn } from "@/lib/utils";
 
 export function EnterpriseProofStrip() {
   return (
@@ -12,7 +13,14 @@ export function EnterpriseProofStrip() {
           {ENTERPRISE_PROOF.map((item, index) => (
             <div
               key={item.label}
-              className="border-b border-navy-200 py-5 sm:px-5 sm:[&:nth-child(2n)]:border-l sm:[&:nth-child(2n+1)]:pl-0 lg:border-b-0 lg:border-l lg:px-6 lg:first:border-l-0 lg:first:pl-0 lg:last:pr-0"
+              className={cn(
+                "border-b border-navy-200 py-5 lg:border-b-0 lg:border-l lg:px-6",
+                index % 2 === 0
+                  ? "sm:pl-0 sm:pr-5"
+                  : "sm:border-l sm:px-5",
+                index === 0 && "lg:border-l-0 lg:pl-0",
+                index === ENTERPRISE_PROOF.length - 1 && "lg:pr-0"
+              )}
             >
               <div className="flex items-center gap-2">
                 <span className="font-mono text-[10px] font-bold text-brand-red">0{index + 1}</span>

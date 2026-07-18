@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { useForm, Controller } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
 import {
   contactSchema,
   type ContactFormData,
 } from "@/lib/schemas/contact-schema";
-import { INDUSTRY_OPTIONS, URGENCY_OPTIONS } from "@/lib/constants";
+import { URGENCY_OPTIONS } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -36,6 +36,11 @@ export function ContactForm() {
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
+      name: "",
+      company: "",
+      email: "",
+      phone: "",
+      message: "",
       website: "",
     },
   });
@@ -50,7 +55,6 @@ export function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-
       const result = await response.json();
 
       if (!response.ok || !result.success) {
@@ -92,16 +96,30 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" noValidate>
-      <div className="absolute -left-[9999px]" aria-hidden="true">
-        <Label htmlFor="website">Website</Label>
-        <Input id="website" tabIndex={-1} autoComplete="off" {...register("website")} />
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
+      <div
+        hidden
+        aria-hidden="true"
+      >
+        <input
+          type="text"
+          className="hidden"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          {...register("website")}
+        />
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2">
+      <div className="grid gap-5 sm:grid-cols-2">
         <div className="space-y-2">
           <Label htmlFor="name">Name *</Label>
-          <Input id="name" {...register("name")} aria-invalid={!!errors.name} />
+          <Input
+            id="name"
+            autoComplete="name"
+            {...register("name")}
+            aria-invalid={!!errors.name}
+          />
           {errors.name ? (
             <p className="text-sm text-red-600" role="alert">
               {errors.name.message}
@@ -110,8 +128,15 @@ export function ContactForm() {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="company">Company *</Label>
-          <Input id="company" {...register("company")} aria-invalid={!!errors.company} />
+          <Label htmlFor="company">
+            Company <span className="text-steel-400">(optional)</span>
+          </Label>
+          <Input
+            id="company"
+            autoComplete="organization"
+            {...register("company")}
+            aria-invalid={!!errors.company}
+          />
           {errors.company ? (
             <p className="text-sm text-red-600" role="alert">
               {errors.company.message}
@@ -120,10 +145,11 @@ export function ContactForm() {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="email">Email *</Label>
+          <Label htmlFor="email">Work email *</Label>
           <Input
             id="email"
             type="email"
+            autoComplete="email"
             {...register("email")}
             aria-invalid={!!errors.email}
           />
@@ -135,8 +161,16 @@ export function ContactForm() {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="phone">Phone *</Label>
-          <Input id="phone" type="tel" {...register("phone")} aria-invalid={!!errors.phone} />
+          <Label htmlFor="phone">
+            Phone <span className="text-steel-400">(optional)</span>
+          </Label>
+          <Input
+            id="phone"
+            type="tel"
+            autoComplete="tel"
+            {...register("phone")}
+            aria-invalid={!!errors.phone}
+          />
           {errors.phone ? (
             <p className="text-sm text-red-600" role="alert">
               {errors.phone.message}
@@ -144,33 +178,18 @@ export function ContactForm() {
           ) : null}
         </div>
 
-        <div className="space-y-2">
-          <Label htmlFor="locations">Number of locations *</Label>
-          <Input
-            id="locations"
-            {...register("locations")}
-            placeholder="e.g. 12"
-            aria-invalid={!!errors.locations}
-          />
-          {errors.locations ? (
-            <p className="text-sm text-red-600" role="alert">
-              {errors.locations.message}
-            </p>
-          ) : null}
-        </div>
-
-        <div className="space-y-2">
-          <Label htmlFor="industry">Industry *</Label>
+        <div className="space-y-2 sm:max-w-xs">
+          <Label htmlFor="urgency">Urgency *</Label>
           <Controller
-            name="industry"
+            name="urgency"
             control={control}
             render={({ field }) => (
               <Select onValueChange={field.onChange} value={field.value}>
-                <SelectTrigger id="industry" aria-invalid={!!errors.industry}>
-                  <SelectValue placeholder="Select industry" />
+                <SelectTrigger id="urgency" aria-invalid={!!errors.urgency}>
+                  <SelectValue placeholder="Select urgency" />
                 </SelectTrigger>
                 <SelectContent>
-                  {INDUSTRY_OPTIONS.map((option) => (
+                  {URGENCY_OPTIONS.map((option) => (
                     <SelectItem key={option} value={option}>
                       {option}
                     </SelectItem>
@@ -179,62 +198,20 @@ export function ContactForm() {
               </Select>
             )}
           />
-          {errors.industry ? (
+          {errors.urgency ? (
             <p className="text-sm text-red-600" role="alert">
-              {errors.industry.message}
+              {errors.urgency.message}
             </p>
           ) : null}
         </div>
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="serviceNeed">Service need *</Label>
-        <Input
-          id="serviceNeed"
-          {...register("serviceNeed")}
-          placeholder="Maintenance, emergency repair, rollout, flooring, etc."
-          aria-invalid={!!errors.serviceNeed}
-        />
-        {errors.serviceNeed ? (
-          <p className="text-sm text-red-600" role="alert">
-            {errors.serviceNeed.message}
-          </p>
-        ) : null}
-      </div>
-
-      <div className="space-y-2">
-        <Label htmlFor="urgency">Urgency *</Label>
-        <Controller
-          name="urgency"
-          control={control}
-          render={({ field }) => (
-            <Select onValueChange={field.onChange} value={field.value}>
-              <SelectTrigger id="urgency" aria-invalid={!!errors.urgency}>
-                <SelectValue placeholder="Select urgency" />
-              </SelectTrigger>
-              <SelectContent>
-                {URGENCY_OPTIONS.map((option) => (
-                  <SelectItem key={option} value={option}>
-                    {option}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          )}
-        />
-        {errors.urgency ? (
-          <p className="text-sm text-red-600" role="alert">
-            {errors.urgency.message}
-          </p>
-        ) : null}
-      </div>
-
-      <div className="space-y-2">
-        <Label htmlFor="message">Message *</Label>
+        <Label htmlFor="message">What do you need help with? *</Label>
         <Textarea
           id="message"
           {...register("message")}
-          placeholder="Tell us about your locations, timeline, and what you need coordinated."
+          placeholder="Include the location, issue, and any timing or access details."
           aria-invalid={!!errors.message}
         />
         {errors.message ? (
@@ -250,7 +227,12 @@ export function ContactForm() {
         </p>
       ) : null}
 
-      <Button type="submit" size="lg" disabled={submitState === "loading"}>
+      <Button
+        type="submit"
+        size="lg"
+        className="w-full sm:w-auto"
+        disabled={submitState === "loading"}
+      >
         {submitState === "loading" ? (
           <>
             <Loader2 className="h-4 w-4 animate-spin" />

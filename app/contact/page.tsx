@@ -3,7 +3,6 @@ import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/section-heading";
 import { SectionShell } from "@/components/section-shell";
 import { ContactForm } from "@/components/contact-form";
-import { FaqAccordion } from "@/components/faq-accordion";
 import { FeatureList } from "@/components/enterprise/feature-list";
 import { CONTACT_ASSURANCES, SITE } from "@/lib/constants";
 
@@ -19,7 +18,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Request service"
-        description="Whether you need day-to-day maintenance support, emergency repair coordination, installation work, flooring, cooler and freezer support, rollout help, or a partner for a multi-location project, Provisioned can help."
+        description="Tell us what is happening, where it is happening, and how quickly you need support."
       />
 
       <SectionShell tone="light" className="py-16 sm:py-20">
@@ -31,8 +30,8 @@ export default function ContactPage() {
                   Service request form
                 </h2>
                 <p className="mt-2 text-sm leading-relaxed text-steel-600">
-                  Provide as much detail as possible about your locations, urgency,
-                  and scope. Required fields are marked with *.
+                  A few essentials are enough to get the conversation started.
+                  Required fields are marked with *.
                 </p>
               </div>
               <ContactForm />
@@ -55,32 +54,12 @@ export default function ContactPage() {
                       </a>
                     </dd>
                   </div>
-                  <div>
-                    <dt className="text-[10px] font-bold uppercase tracking-[0.18em] text-steel-500">
-                      Phone
-                    </dt>
-                    <dd className="mt-1.5">
-                      <a
-                        href={`tel:${SITE.phone.replace(/\D/g, "")}`}
-                        className="font-medium text-navy-950 hover:text-amber-600"
-                      >
-                        {SITE.phone}
-                      </a>
-                    </dd>
-                  </div>
                 </dl>
               </div>
 
               <div className="enterprise-card mt-6 p-6">
                 <SectionHeading title="What to expect" />
                 <FeatureList items={CONTACT_ASSURANCES} className="mt-4" />
-              </div>
-
-              <div className="enterprise-card mt-6 p-6">
-                <SectionHeading title="Common questions" />
-                <div className="mt-4">
-                  <FaqAccordion />
-                </div>
               </div>
             </aside>
           </div>

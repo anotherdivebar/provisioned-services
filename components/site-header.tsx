@@ -43,10 +43,13 @@ export function SiteHeader() {
       <div className="mx-auto flex h-[4.75rem] max-w-[90rem] items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="group -ml-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-4"
+          className="group rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-4"
           aria-label="Provisioned Services home"
         >
-          <BrandLogo priority className="h-12 w-44 transition-opacity group-hover:opacity-90 sm:w-48" />
+          <BrandLogo
+            priority
+            className="h-14 w-44 rounded-md border border-brand-red-dark/25 shadow-[0_5px_16px_rgba(72,20,7,0.14)] ring-1 ring-white/70 transition-[transform,box-shadow,opacity] duration-200 group-hover:-translate-y-px group-hover:opacity-95 group-hover:shadow-[0_8px_22px_rgba(72,20,7,0.18)]"
+          />
         </Link>
 
         <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Main navigation">
@@ -72,10 +75,7 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-2 lg:flex">
-          <Button asChild variant="outline" size="sm">
-            <Link href="/apply-to-be-a-vendor">Vendor network</Link>
-          </Button>
+        <div className="hidden items-center lg:flex">
           <Button asChild size="sm" className="group">
             <Link href="/contact">
               Request service
@@ -135,9 +135,6 @@ export function SiteHeader() {
               <div className="mt-8 grid gap-3">
                 <Button asChild size="lg" className="w-full">
                   <Link href="/contact" onClick={() => setMobileOpen(false)}>Request service</Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="w-full">
-                  <Link href="/apply-to-be-a-vendor" onClick={() => setMobileOpen(false)}>Apply to be a vendor</Link>
                 </Button>
               </div>
             </nav>
