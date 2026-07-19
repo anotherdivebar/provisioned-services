@@ -23,14 +23,14 @@ export default function IndustriesPage() {
         primaryCta={{ label: "Request Service", href: "/contact" }}
       />
 
-      <SectionShell tone="light" className="py-20 sm:py-24">
+      <SectionShell tone="light" className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="space-y-16">
+          <div className="space-y-12 sm:space-y-16">
             {INDUSTRIES.map((industry, index) => (
               <article
                 key={industry.slug}
                 id={industry.slug}
-                className="scroll-mt-24 grid gap-8 border-b border-navy-100 pb-16 last:border-b-0 last:pb-0 lg:grid-cols-2 lg:gap-12"
+                className="scroll-mt-24 grid gap-6 border-b border-navy-100 pb-12 last:border-b-0 last:pb-0 sm:gap-8 sm:pb-16 lg:grid-cols-2 lg:gap-12"
               >
                 <div>
                   <p className="font-mono text-[11px] font-bold text-amber-600">
@@ -46,14 +46,14 @@ export default function IndustriesPage() {
                 </div>
 
                 <div className="grid gap-5">
-                  <div className="enterprise-card bg-off-white p-6">
+                  <div className="enterprise-card bg-off-white p-5 sm:p-6">
                     <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-navy-950">
                       Common pain points
                     </h3>
                     <FeatureList items={industry.painPoints} className="mt-4" />
                   </div>
 
-                  <div className="enterprise-card p-6">
+                  <div className="enterprise-card p-5 sm:p-6">
                     <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-navy-950">
                       Example services
                     </h3>

@@ -42,8 +42,8 @@ export function PageHero({
         </>
       ) : null}
 
-      <div className="relative mx-auto max-w-[90rem] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+      <div className="relative mx-auto max-w-[90rem] px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
           <FadeUp duration={0.6}>
             {eyebrow ? (
               <p className="mb-6 inline-flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.24em] text-white/75">
@@ -57,7 +57,7 @@ export function PageHero({
             {description ? (
               <p
                 className={cn(
-                  "mt-6 max-w-2xl text-lg leading-relaxed lg:text-xl",
+                  "mt-5 max-w-2xl text-base leading-relaxed sm:mt-6 sm:text-lg lg:text-xl",
                   dark ? "text-steel-300" : "text-steel-600"
                 )}
               >
@@ -66,7 +66,7 @@ export function PageHero({
             ) : null}
 
             {(primaryCta || secondaryCta) && (
-              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row">
                 {primaryCta ? (
                   <Button asChild size="lg" className={cn(dark && "bg-white text-brand-red hover:bg-brand-cream")}>
                     <Link href={primaryCta.href}>

@@ -24,20 +24,20 @@ export default function ServicesPage() {
         primaryCta={{ label: "Request Service", href: "/contact" }}
       />
 
-      <SectionShell tone="light" className="py-20 sm:py-24">
+      <SectionShell tone="light" className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Service Catalog"
             title="Grouped by operational need"
             description="Services organized by how operators typically plan, prioritize, and execute facility work."
           />
-          <div className="mt-12">
+          <div className="mt-10 sm:mt-12">
             <ServiceGroups />
           </div>
         </div>
       </SectionShell>
 
-      <SectionShell tone="muted" className="py-20 sm:py-24">
+      <SectionShell tone="muted" className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Trades & Capabilities"
@@ -57,7 +57,7 @@ export default function ServicesPage() {
         </div>
       </SectionShell>
 
-      <SectionShell tone="white" className="py-20 sm:py-24">
+      <SectionShell tone="white" className="py-16 sm:py-24">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <SectionHeading
             align="center"

@@ -151,7 +151,7 @@ export function VendorApplicationForm() {
     return (
       <FadeUp>
         <div
-          className="rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-white p-10 text-center shadow-sm"
+          className="rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-white p-8 text-center shadow-sm sm:p-10"
           role="status"
         >
           <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500/15 text-2xl font-bold text-emerald-600">
@@ -168,7 +168,7 @@ export function VendorApplicationForm() {
   }
 
   return (
-    <div className="grid gap-10 lg:grid-cols-[1fr_280px] lg:items-start">
+    <div className="grid gap-8 lg:grid-cols-[1fr_280px] lg:items-start lg:gap-10">
       <aside className="order-first hidden lg:order-last lg:block">
         <div className="sticky top-24 rounded-2xl border border-navy-100 bg-white p-6 shadow-sm">
           <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-amber-600">
@@ -194,10 +194,16 @@ export function VendorApplicationForm() {
         </div>
       </aside>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-8" noValidate>
-      <div className="absolute -left-[9999px]" aria-hidden="true">
-        <Label htmlFor="website">Website</Label>
-        <Input id="website" tabIndex={-1} autoComplete="off" {...register("website")} />
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 sm:space-y-8" noValidate>
+      <div hidden aria-hidden="true">
+        <input
+          type="text"
+          className="hidden"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          {...register("website")}
+        />
       </div>
 
       <FormSection
@@ -206,7 +212,7 @@ export function VendorApplicationForm() {
         title="Company Information"
         helperText="Legal business name and primary contact details."
       >
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-5 sm:grid-cols-2 sm:gap-6">
           <div className="space-y-2 sm:col-span-2">
             <Label htmlFor="companyName">Company name *</Label>
             <Input id="companyName" {...register("companyName")} />
@@ -313,7 +319,7 @@ export function VendorApplicationForm() {
         title="Business Details"
         helperText="Licensing, insurance, and business structure."
       >
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-5 sm:grid-cols-2 sm:gap-6">
           <div className="space-y-2">
             <Label htmlFor="yearsInBusiness">Years in business *</Label>
             <Input id="yearsInBusiness" {...register("yearsInBusiness")} />
@@ -490,7 +496,7 @@ export function VendorApplicationForm() {
         title="Operational Fit"
         helperText="Help us understand your availability and experience."
       >
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-5 sm:grid-cols-2 sm:gap-6">
           <div className="space-y-2">
             <Label htmlFor="emergencyResponse">Emergency response? *</Label>
             <Controller
@@ -558,7 +564,7 @@ export function VendorApplicationForm() {
       </FormSection>
 
       <FormSection step={5} totalSteps={TOTAL} title="References">
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-5 sm:grid-cols-2 sm:gap-6">
           {[
             ["reference1Company", "Reference 1 company *"],
             ["reference1Contact", "Reference 1 contact *"],
@@ -611,7 +617,7 @@ export function VendorApplicationForm() {
               ],
             ] as const
           ).map(([fieldName, label]) => (
-            <div key={fieldName} className="flex items-start gap-3">
+            <div key={fieldName} className="flex min-h-11 items-start gap-3 py-1">
               <Controller
                 name={fieldName}
                 control={control}

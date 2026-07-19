@@ -7,6 +7,7 @@ import { HeroOperationsGraphic } from "@/components/hero-operations-graphic";
 import { easeOut, SlideInRight } from "@/components/motion/animations";
 import { HERO_TRUST_POINTS } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const MOBILE_WORKFLOW_STEPS = [
   "Intake",
@@ -66,7 +67,15 @@ export function HomeHero() {
           {HERO_TRUST_POINTS.map((point, index) => (
             <div
               key={point}
-              className="flex min-h-20 items-center gap-3 border-white/15 px-3 py-4 first:pl-0 max-lg:border-b max-lg:odd:border-r lg:border-r lg:last:border-r-0 lg:last:pr-0"
+              className={cn(
+                "flex min-h-20 items-center gap-3 border-white/15 px-3 py-4 max-lg:border-b lg:border-r lg:first:pl-0 lg:last:border-r-0 lg:last:pr-0",
+                index % 2 === 0 && index < HERO_TRUST_POINTS.length - 1
+                  ? "max-lg:border-r max-lg:pl-0"
+                  : null,
+                index === HERO_TRUST_POINTS.length - 1
+                  ? "max-lg:col-span-2 max-lg:border-b-0 max-lg:pl-0"
+                  : null
+              )}
             >
               <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-white/25 bg-white/10">
                 <Check className="h-3 w-3" strokeWidth={2.5} aria-hidden="true" />

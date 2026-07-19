@@ -39,7 +39,7 @@ export function CaseStudyCard({
     >
       <div
         className={cn(
-          "relative h-44 overflow-hidden bg-gradient-to-br",
+          "relative h-40 overflow-hidden bg-gradient-to-br sm:h-44",
           visual
         )}
       >
@@ -53,7 +53,7 @@ export function CaseStudyCard({
           aria-hidden="true"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-navy-950/20 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-6">
+        <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
           <div className="flex flex-wrap gap-2">
             <span className="rounded-full bg-amber-500 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
               {projectType}
@@ -68,7 +68,7 @@ export function CaseStudyCard({
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col gap-5 p-6">
+      <div className="flex flex-1 flex-col gap-4 p-5 sm:gap-5 sm:p-6">
         {(
           [
             ["Challenge", challenge],
@@ -85,10 +85,10 @@ export function CaseStudyCard({
         ))}
       </div>
 
-      <div className="border-t border-navy-100 px-6 py-4">
+      <div className="border-t border-navy-100 px-5 py-2 sm:px-6 sm:py-3">
         <Link
           href={href}
-          className="inline-flex items-center gap-2 text-sm font-semibold text-navy-900 transition-colors hover:text-amber-600"
+          className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-navy-900 transition-colors hover:text-amber-600"
         >
           View project details
           <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

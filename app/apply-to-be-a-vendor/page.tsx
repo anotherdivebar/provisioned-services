@@ -27,7 +27,7 @@ export default function ApplyToBeAVendorPage() {
 
       <SectionShell tone="muted" className="py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-10 enterprise-card p-6 sm:p-8">
+          <div className="mb-8 enterprise-card p-5 sm:mb-10 sm:p-8">
             <h2 className="text-lg font-bold text-navy-950">Before you begin</h2>
             <FeatureList items={APPLICATION_NOTES} className="mt-4" />
           </div>

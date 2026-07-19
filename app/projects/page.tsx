@@ -22,14 +22,14 @@ export default function ProjectsPage() {
         primaryCta={{ label: "Request Service", href: "/contact" }}
       />
 
-      <SectionShell tone="light" className="py-20 sm:py-24">
+      <SectionShell tone="light" className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Project Examples"
             title="How Provisioned supports complex facility work"
             description="Each example follows a consistent structure: challenge, coordinated solution, and operational outcome."
           />
-          <div className="mt-12 grid gap-5 lg:grid-cols-2">
+          <div className="mt-10 grid gap-5 sm:mt-12 lg:grid-cols-2">
             {CASE_STUDIES.map((project) => (
               <CaseStudyCard key={project.id} {...project} href="/contact" />
             ))}

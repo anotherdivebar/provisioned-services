@@ -32,7 +32,7 @@ export function PremiumServiceCard({
     >
       <div
         className={cn(
-          "relative h-36 overflow-hidden bg-gradient-to-br",
+          "relative h-32 overflow-hidden bg-gradient-to-br sm:h-36",
           visual
         )}
       >
@@ -59,7 +59,7 @@ export function PremiumServiceCard({
         </span>
       </div>
 
-      <div className="flex flex-1 flex-col p-6">
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
         <div className="mb-3 flex items-center justify-between">
           <span className="text-[11px] font-bold tabular-nums tracking-widest text-amber-600">
             {index}
@@ -76,7 +76,7 @@ export function PremiumServiceCard({
         </p>
         <Link
           href="/services"
-          className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-navy-900 transition-colors group-hover:text-amber-600"
+          className="mt-4 inline-flex min-h-11 items-center gap-1.5 py-2 text-sm font-semibold text-navy-900 transition-colors group-hover:text-amber-600 sm:mt-5"
         >
           Learn more
           <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

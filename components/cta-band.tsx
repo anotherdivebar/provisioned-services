@@ -27,7 +27,7 @@ export function CtaBand({
   return (
     <section
       className={cn(
-        "relative overflow-hidden border-y border-white/10 py-20 sm:py-24",
+        "relative overflow-hidden border-y border-white/10 py-16 sm:py-24",
         variant === "final"
           ? "bg-gradient-to-br from-navy-950 via-[#35140b] to-charcoal-950"
           : "bg-navy-950",
@@ -51,13 +51,13 @@ export function CtaBand({
           {title}
         </h2>
         {description ? (
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-steel-300">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-steel-300 sm:text-lg">
             {description}
           </p>
         ) : null}
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           {primaryCta ? (
-            <Button asChild size="lg" className="h-12 px-8 shadow-lg shadow-amber-500/20">
+            <Button asChild size="lg" className="h-12 w-full px-8 shadow-lg shadow-amber-500/20 sm:w-auto">
               <Link href={primaryCta.href}>
                 {primaryCta.label}
                 <ArrowRight className="h-4 w-4" />
@@ -65,7 +65,7 @@ export function CtaBand({
             </Button>
           ) : null}
           {secondaryCta ? (
-            <Button asChild variant="secondary" size="lg" className="h-12 px-8">
+            <Button asChild variant="secondary" size="lg" className="h-12 w-full px-8 sm:w-auto">
               <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
             </Button>
           ) : null}

@@ -4,7 +4,6 @@ import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/section-heading";
 import { SectionShell } from "@/components/section-shell";
 import { CtaBand } from "@/components/cta-band";
-import { VendorCTA } from "@/components/vendor-cta";
 import { FeatureList } from "@/components/enterprise/feature-list";
 import { Button } from "@/components/ui/button";
 import { VENDOR_BENEFITS, VENDOR_TRADES } from "@/lib/constants";
@@ -46,9 +45,9 @@ export default function VendorsPage() {
         primaryCta={{ label: "Apply to Be a Vendor", href: "/apply-to-be-a-vendor" }}
       />
 
-      <SectionShell tone="light" className="py-20 sm:py-24">
+      <SectionShell tone="light" className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="grid gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-16">
             <div>
               <SectionHeading
                 eyebrow="Who Should Apply"
@@ -67,7 +66,7 @@ export default function VendorsPage() {
         </div>
       </SectionShell>
 
-      <SectionShell tone="muted" className="py-20 sm:py-24">
+      <SectionShell tone="muted" className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Partner Benefits"
@@ -76,7 +75,7 @@ export default function VendorsPage() {
           />
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             {VENDOR_BENEFITS.map((benefit, index) => (
-              <article key={benefit.title} className="enterprise-card p-6">
+              <article key={benefit.title} className="enterprise-card p-5 sm:p-6">
                 <span className="font-mono text-[11px] font-bold text-amber-600">
                   {String(index + 1).padStart(2, "0")}
                 </span>
@@ -90,9 +89,9 @@ export default function VendorsPage() {
         </div>
       </SectionShell>
 
-      <SectionShell tone="white" className="py-20 sm:py-24">
+      <SectionShell tone="white" className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
+          <div className="grid gap-10 sm:gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
             <div>
               <SectionHeading
                 eyebrow="Qualifications"
@@ -123,8 +122,6 @@ export default function VendorsPage() {
           </div>
         </div>
       </SectionShell>
-
-      <VendorCTA />
 
       <CtaBand
         title="Ready to apply?"

@@ -26,7 +26,7 @@ export function FormSection({
         className
       )}
     >
-      <div className="border-b border-navy-100 bg-gradient-to-r from-off-white to-white px-6 py-5 sm:px-8 sm:py-6">
+      <div className="border-b border-navy-100 bg-gradient-to-r from-off-white to-white px-5 py-4 sm:px-8 sm:py-6">
         <div className="flex items-start justify-between gap-4">
           <div>
             <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-amber-600">
@@ -56,7 +56,7 @@ export function FormSection({
           />
         </div>
       </div>
-      <div className="p-6 sm:p-8">{children}</div>
+      <div className="p-5 sm:p-8">{children}</div>
     </section>
   );
 }

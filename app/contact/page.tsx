@@ -23,7 +23,7 @@ export default function ContactPage() {
 
       <SectionShell tone="light" className="py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
+          <div className="grid gap-10 sm:gap-12 lg:grid-cols-5 lg:gap-16">
             <div className="lg:col-span-3">
               <div className="mb-8">
                 <h2 className="text-xl font-bold text-navy-950">
@@ -48,7 +48,7 @@ export default function ContactPage() {
                     <dd className="mt-1.5">
                       <a
                         href={`mailto:${SITE.email}`}
-                        className="font-medium text-navy-950 hover:text-amber-600"
+                        className="inline-flex min-h-11 items-center py-2 font-medium text-navy-950 hover:text-amber-600"
                       >
                         {SITE.email}
                       </a>

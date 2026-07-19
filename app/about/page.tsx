@@ -33,9 +33,9 @@ export default function AboutPage() {
         primaryCta={{ label: "Request Service", href: "/contact" }}
       />
 
-      <SectionShell tone="light" className="py-20 sm:py-24">
+      <SectionShell tone="light" className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="grid gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-16">
             <div>
               <SectionHeading
                 eyebrow="Who We Are"
@@ -64,7 +64,7 @@ export default function AboutPage() {
         </div>
       </SectionShell>
 
-      <SectionShell tone="muted" className="py-20 sm:py-24">
+      <SectionShell tone="muted" className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="How We Operate"
@@ -77,21 +77,21 @@ export default function AboutPage() {
         </div>
       </SectionShell>
 
-      <SectionShell tone="white" className="py-20 sm:py-24">
+      <SectionShell tone="white" className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Process"
             title="Consistent execution across every request"
           />
-          <div className="mt-12">
+          <div className="mt-10 sm:mt-12">
             <ProcessTimeline />
           </div>
         </div>
       </SectionShell>
 
-      <SectionShell tone="light" className="py-20 sm:py-24">
+      <SectionShell tone="light" className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="grid gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-16">
             <div>
               <SectionHeading
                 eyebrow="Why Clients Work With Provisioned"
@@ -118,7 +118,7 @@ export default function AboutPage() {
         </div>
       </SectionShell>
 
-      <SectionShell tone="muted" className="py-20 sm:py-24">
+      <SectionShell tone="muted" className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Organization"
@@ -127,7 +127,7 @@ export default function AboutPage() {
           />
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {ORGANIZATION_AREAS.map((area, index) => (
-              <article key={area.title} className="enterprise-card p-6">
+              <article key={area.title} className="enterprise-card p-5 sm:p-6">
                 <span className="font-mono text-[11px] font-bold text-amber-600">
                   {String(index + 1).padStart(2, "0")}
                 </span>
