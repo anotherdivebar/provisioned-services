@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { CASE_STUDY_VISUALS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 interface CaseStudyCardProps {
@@ -15,8 +14,13 @@ interface CaseStudyCardProps {
   className?: string;
 }
 
+const BRIEF_ROWS = [
+  { key: "challenge", number: "01", label: "Challenge" },
+  { key: "solution", number: "02", label: "Coordinated response" },
+  { key: "outcome", number: "03", label: "Operational outcome" },
+] as const;
+
 export function CaseStudyCard({
-  id,
   title,
   projectType,
   industry,
@@ -26,71 +30,60 @@ export function CaseStudyCard({
   href = "/projects",
   className,
 }: CaseStudyCardProps) {
-  const visual =
-    (id && CASE_STUDY_VISUALS[id]) ||
-    "from-[#8d1d03] via-[#7b2815] to-[#2a1009]";
+  const content = { challenge, solution, outcome };
 
   return (
     <article
       className={cn(
-        "group flex h-full flex-col overflow-hidden rounded-lg border border-navy-100/80 bg-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-amber-300/50 hover:shadow-md",
+        "group flex h-full flex-col overflow-hidden border border-navy-200 bg-off-white transition-all duration-300 hover:border-brand-red/40 hover:bg-white hover:shadow-[0_24px_60px_rgba(61,23,12,0.09)]",
         className
       )}
     >
-      <div
-        className={cn(
-          "relative h-40 overflow-hidden bg-gradient-to-br sm:h-44",
-          visual
-        )}
-      >
+      <div className="relative border-b border-navy-200 px-5 py-5 sm:px-6 sm:py-6">
         <div
-          className="absolute inset-0 opacity-15"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-            backgroundSize: "24px 24px",
-          }}
+          className="absolute inset-y-0 left-0 w-1 bg-brand-red"
           aria-hidden="true"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-navy-950/20 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
-          <div className="flex flex-wrap gap-2">
-            <span className="rounded-full bg-amber-500 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
-              {projectType}
-            </span>
-            <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white/90 backdrop-blur-sm">
-              {industry}
-            </span>
-          </div>
-          <h3 className="mt-4 text-xl font-bold leading-snug text-white lg:text-2xl">
-            {title}
-          </h3>
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="bg-brand-red px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.16em] text-white">
+            {projectType}
+          </span>
+          <span className="border border-navy-200 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.16em] text-steel-600">
+            {industry}
+          </span>
         </div>
+        <h3 className="mt-6 max-w-xl text-2xl font-semibold leading-[1.02] tracking-[-0.04em] text-navy-950 sm:text-[1.75rem]">
+          {title}
+        </h3>
       </div>
 
-      <div className="flex flex-1 flex-col gap-4 p-5 sm:gap-5 sm:p-6">
-        {(
-          [
-            ["Challenge", challenge],
-            ["Solution", solution],
-            ["Outcome", outcome],
-          ] as const
-        ).map(([label, text]) => (
-          <div key={label} className="border-l-2 border-amber-500/30 pl-4">
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-amber-600">
-              {label}
-            </p>
-            <p className="mt-1.5 text-sm leading-relaxed text-steel-600">{text}</p>
+      <div className="flex-1">
+        {BRIEF_ROWS.map((row) => (
+          <div
+            key={row.key}
+            className="grid gap-2 border-b border-navy-100 px-5 py-5 last:border-b-0 sm:grid-cols-[3.2rem_1fr] sm:gap-4 sm:px-6"
+          >
+            <span className="font-mono text-[10px] font-bold text-brand-red">
+              {row.number}
+            </span>
+            <div>
+              <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-steel-500">
+                {row.label}
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-steel-700">
+                {content[row.key]}
+              </p>
+            </div>
           </div>
         ))}
       </div>
 
-      <div className="border-t border-navy-100 px-5 py-2 sm:px-6 sm:py-3">
+      <div className="border-t border-navy-200 px-5 py-3 sm:px-6">
         <Link
           href={href}
-          className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-navy-900 transition-colors hover:text-amber-600"
+          className="inline-flex min-h-11 w-full items-center justify-between text-sm font-semibold text-navy-900 transition-colors group-hover:text-brand-red"
         >
-          View project details
+          Discuss a similar project
           <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </Link>
       </div>

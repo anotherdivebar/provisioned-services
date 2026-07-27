@@ -27,37 +27,43 @@ export function CtaBand({
   return (
     <section
       className={cn(
-        "relative overflow-hidden border-y border-white/10 py-16 sm:py-24",
-        variant === "final"
-          ? "bg-gradient-to-br from-navy-950 via-[#35140b] to-charcoal-950"
-          : "bg-navy-950",
+        "relative overflow-hidden border-y border-white/10 bg-charcoal-950 py-14 text-white sm:py-20",
         className
       )}
     >
-      <VisualPattern variant="blueprint" opacity={0.25} />
+      <VisualPattern variant="grid" opacity={0.16} />
       <div
-        className="absolute inset-0 bg-gradient-to-r from-amber-500/12 via-transparent to-white/[0.03]"
+        className={cn(
+          "absolute inset-y-0 left-0 w-1.5 bg-brand-red",
+          variant === "final" && "w-2.5"
+        )}
         aria-hidden="true"
       />
-      {variant === "final" ? (
-        <div
-          className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-500/40 to-transparent"
-          aria-hidden="true"
-        />
-      ) : null}
+      <div
+        className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 font-mono text-[16rem] font-bold leading-none tracking-[-0.12em] text-white/[0.025]"
+        aria-hidden="true"
+      >
+        PSI
+      </div>
 
-      <FadeUp className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-semibold tracking-[-0.04em] text-white sm:text-4xl lg:text-6xl lg:leading-[1.02]">
-          {title}
-        </h2>
-        {description ? (
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-steel-300 sm:text-lg">
-            {description}
+      <FadeUp className="relative mx-auto grid max-w-[90rem] gap-9 px-4 sm:px-6 lg:grid-cols-[1fr_auto] lg:items-end lg:px-8">
+        <div>
+          <p className="mb-5 font-mono text-[10px] font-bold uppercase tracking-[0.24em] text-brand-red-light">
+            Next move / Start here
           </p>
-        ) : null}
-        <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <h2 className="max-w-4xl text-3xl font-semibold leading-[1] tracking-[-0.045em] sm:text-4xl lg:text-5xl">
+            {title}
+          </h2>
+          {description ? (
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/55 sm:text-lg">
+              {description}
+            </p>
+          ) : null}
+        </div>
+
+        <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
           {primaryCta ? (
-            <Button asChild size="lg" className="h-12 w-full px-8 shadow-lg shadow-amber-500/20 sm:w-auto">
+            <Button asChild size="lg" className="w-full sm:w-auto">
               <Link href={primaryCta.href}>
                 {primaryCta.label}
                 <ArrowRight className="h-4 w-4" />
@@ -65,7 +71,12 @@ export function CtaBand({
             </Button>
           ) : null}
           {secondaryCta ? (
-            <Button asChild variant="secondary" size="lg" className="h-12 w-full px-8 sm:w-auto">
+            <Button
+              asChild
+              variant="secondary"
+              size="lg"
+              className="w-full sm:w-auto"
+            >
               <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
             </Button>
           ) : null}

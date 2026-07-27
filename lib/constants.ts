@@ -2,8 +2,9 @@ export const SITE = {
   name: "Provisioned Services, Inc.",
   shortName: "Provisioned Services",
   tagline: "Facility Support for Brands That Can't Afford Downtime.",
-  email: "info@provisionedservices.com",
+  email: "info@provisioned.net",
   phone: "(555) 000-0000",
+  vendorPortalUrl: "https://vendor.facilit.fm/Login/Index?c=psi",
 } as const;
 
 export const NAV_LINKS = [

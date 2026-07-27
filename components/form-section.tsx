@@ -66,7 +66,6 @@ export const VENDOR_FORM_SECTIONS = [
   "Business Details",
   "Services & Trades",
   "Operational Fit",
-  "References",
   "Documents",
   "Agreement",
 ] as const;

@@ -6,7 +6,7 @@ import { SectionShell } from "@/components/section-shell";
 import { CtaBand } from "@/components/cta-band";
 import { FeatureList } from "@/components/enterprise/feature-list";
 import { Button } from "@/components/ui/button";
-import { VENDOR_BENEFITS, VENDOR_TRADES } from "@/lib/constants";
+import { SITE, VENDOR_BENEFITS, VENDOR_TRADES } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Vendors",
@@ -31,7 +31,7 @@ const EXPECTATIONS = [
 const QUALIFICATIONS = [
   "Valid business registration and contact information",
   "Insurance and licensing appropriate to your trade and service area",
-  "Ability to provide references and documentation when requested",
+  "Ability to provide requested business and compliance documentation",
   "Willingness to work within Provisioned quality and communication standards",
 ] as const;
 
@@ -43,6 +43,7 @@ export default function VendorsPage() {
         title="Join the Provisioned vendor network"
         description="Provisioned works with responsive, insured, professional service providers to support restaurants, retailers, and multi-site operators. If your team is committed to quality work, we want to learn about your capabilities."
         primaryCta={{ label: "Apply to Be a Vendor", href: "/apply-to-be-a-vendor" }}
+        secondaryCta={{ label: "Vendor Portal", href: SITE.vendorPortalUrl }}
       />
 
       <SectionShell tone="light" className="py-16 sm:py-24">

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const APPLICATION_NOTES = [
   "Applications are reviewed based on current client needs and coverage",
   "Submitting does not guarantee work or network acceptance",
-  "Have insurance, licensing, and reference details ready where applicable",
+  "Have insurance and licensing details ready where applicable",
 ] as const;
 
 export default function ApplyToBeAVendorPage() {
@@ -31,7 +31,11 @@ export default function ApplyToBeAVendorPage() {
             <h2 className="text-lg font-bold text-navy-950">Before you begin</h2>
             <FeatureList items={APPLICATION_NOTES} className="mt-4" />
           </div>
-          <VendorApplicationForm />
+          <VendorApplicationForm
+            turnstileSiteKey={
+              process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? ""
+            }
+          />
         </div>
       </SectionShell>
     </>

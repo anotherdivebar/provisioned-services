@@ -104,6 +104,42 @@ body {
     linear-gradient(135deg, #751702 0%, #8d1d03 50%, #a3280a 100%);
 }
 
+.hero-editorial {
+  background:
+    radial-gradient(circle at 78% 8%, rgba(141, 29, 3, 0.08), transparent 24rem),
+    linear-gradient(112deg, #fbf8f3 0%, #f6f1e9 62%, #eee1d6 100%);
+}
+
+.coordinate-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.coordinate-grid-dark {
+  background-image:
+    linear-gradient(rgba(36, 22, 17, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(36, 22, 17, 0.055) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to right, black, transparent 75%);
+}
+
+.signal-orbit {
+  border-radius: 9999px;
+  background:
+    radial-gradient(
+      circle,
+      transparent 0 23%,
+      rgba(185, 47, 18, 0.34) 23.25% 23.7%,
+      transparent 24% 40%,
+      rgba(255, 255, 255, 0.09) 40.25% 40.7%,
+      transparent 41% 58%,
+      rgba(185, 47, 18, 0.2) 58.25% 58.7%,
+      transparent 59%
+    );
+}
+
 .brand-rings {
   background:
     radial-gradient(circle at 50% 100%, transparent 0 19%, rgba(255,255,255,.11) 19.2% 19.7%, transparent 20% 31%, rgba(255,255,255,.08) 31.2% 31.7%, transparent 32% 43%, rgba(255,255,255,.06) 43.2% 43.7%, transparent 44%);

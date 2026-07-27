@@ -19,66 +19,57 @@ export function PremiumServiceCard({
   category,
   code,
   index,
-  visual,
   caption,
   className,
 }: PremiumServiceCardProps) {
   return (
     <article
       className={cn(
-        "group relative flex h-full flex-col overflow-hidden rounded-lg border border-navy-100/80 bg-white shadow-sm transition-all duration-500 hover:-translate-y-0.5 hover:shadow-md",
+        "group relative flex h-full min-h-[24rem] flex-col overflow-hidden border border-navy-200 bg-off-white transition-all duration-300 hover:-translate-y-1 hover:border-brand-red/50 hover:bg-white hover:shadow-[0_24px_60px_rgba(61,23,12,0.1)]",
         className
       )}
     >
-      <div
-        className={cn(
-          "relative h-32 overflow-hidden bg-gradient-to-br sm:h-36",
-          visual
-        )}
-      >
-        <div
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)",
-            backgroundSize: "20px 20px",
-          }}
-          aria-hidden="true"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-        <div className="absolute left-4 top-4 flex items-center gap-2">
-          <span className="rounded bg-white/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.15em] text-white/90 backdrop-blur-sm">
-            {category}
+      <div className="h-1 w-full bg-navy-100">
+        <div className="h-full w-14 bg-brand-red transition-all duration-500 group-hover:w-full" />
+      </div>
+
+      <div className="flex items-start justify-between gap-4 px-5 pt-5 sm:px-6 sm:pt-6">
+        <div>
+          <span className="font-mono text-[10px] font-bold text-brand-red">
+            {index}
           </span>
+          <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.2em] text-steel-500">
+            {category}
+          </p>
         </div>
-        <div className="absolute bottom-4 left-4 right-4">
-          <p className="text-xs font-medium text-white/70">{caption}</p>
-        </div>
-        <span className="absolute right-4 top-4 font-mono text-2xl font-bold text-white/20">
+        <span
+          className="font-mono text-5xl font-semibold tracking-[-0.08em] text-navy-100 transition-colors group-hover:text-brand-red/10"
+          aria-hidden="true"
+        >
           {code}
         </span>
       </div>
 
-      <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <div className="mb-3 flex items-center justify-between">
-          <span className="text-[11px] font-bold tabular-nums tracking-widest text-amber-600">
-            {index}
-          </span>
-          <span className="rounded-full border border-navy-100 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-steel-500">
-            Service module
-          </span>
-        </div>
-        <h3 className="text-xl font-bold leading-snug text-navy-950 transition-colors group-hover:text-navy-800">
+      <div className="flex flex-1 flex-col px-5 pb-5 pt-8 sm:px-6 sm:pb-6">
+        <h3 className="max-w-[16rem] text-2xl font-semibold leading-[1.02] tracking-[-0.04em] text-navy-950">
           {title}
         </h3>
-        <p className="mt-3 flex-1 text-sm leading-relaxed text-steel-600">
+        <p className="mt-4 flex-1 text-sm leading-relaxed text-steel-600">
           {description}
         </p>
+
+        <div className="mt-7 border-t border-navy-100 pt-4">
+          <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-steel-400">
+            Scope signal
+          </p>
+          <p className="mt-1.5 text-xs font-semibold text-navy-800">{caption}</p>
+        </div>
+
         <Link
           href="/services"
-          className="mt-4 inline-flex min-h-11 items-center gap-1.5 py-2 text-sm font-semibold text-navy-900 transition-colors group-hover:text-amber-600 sm:mt-5"
+          className="mt-4 inline-flex min-h-11 items-center justify-between border-t border-navy-100 pt-4 text-sm font-semibold text-navy-900 transition-colors group-hover:text-brand-red"
         >
-          Learn more
+          Explore capability
           <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </Link>
       </div>
@@ -86,5 +77,4 @@ export function PremiumServiceCard({
   );
 }
 
-// keep old export name working on other pages
 export { PremiumServiceCard as ServiceCard };

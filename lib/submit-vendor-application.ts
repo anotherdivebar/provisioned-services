@@ -1,6 +1,5 @@
 import {
   vendorApplicationSchema,
-  type VendorApplicationFormData,
 } from "@/lib/schemas/vendor-application-schema";
 
 export type SubmitVendorApplicationResult =
@@ -8,7 +7,7 @@ export type SubmitVendorApplicationResult =
   | { success: false; error: string; fieldErrors?: Record<string, string[]> };
 
 export async function submitVendorApplication(
-  data: VendorApplicationFormData
+  data: unknown
 ): Promise<SubmitVendorApplicationResult> {
   const parsed = vendorApplicationSchema.safeParse(data);
 

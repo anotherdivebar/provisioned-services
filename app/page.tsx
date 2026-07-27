@@ -96,10 +96,10 @@ export default function HomePage() {
           <FadeUp>
             <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
               <SectionHeading
-                eyebrow="Representative work"
+                eyebrow="Example engagements"
                 sectionNumber="03"
-                title="Proof lives in the way the work gets handled."
-                description="Illustrative project scenarios that show the facility challenges PSI is built to coordinate."
+                title="A clear view of how the work gets handled."
+                description="Illustrative project scenarios structured around the challenge, coordinated response, and operational outcome."
               />
               <Button asChild variant="outline" size="lg" className="w-fit shrink-0">
                 <Link href="/projects">

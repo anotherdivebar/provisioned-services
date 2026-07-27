@@ -52,13 +52,6 @@ export const vendorApplicationSchema = z.object({
   multiSiteExperience: yesNoSchema,
   experienceDescription: z.string().min(20, "Please describe your experience"),
 
-  reference1Company: z.string().min(2, "Reference 1 company is required"),
-  reference1Contact: z.string().min(2, "Reference 1 contact is required"),
-  reference1Info: z.string().min(5, "Reference 1 phone/email is required"),
-  reference2Company: z.string().min(2, "Reference 2 company is required"),
-  reference2Contact: z.string().min(2, "Reference 2 contact is required"),
-  reference2Info: z.string().min(5, "Reference 2 phone/email is required"),
-
   confirmAccurate: z.literal(true, {
     message: "You must confirm the information is accurate",
   }),

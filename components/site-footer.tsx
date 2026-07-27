@@ -6,8 +6,9 @@ import { Button } from "@/components/ui/button";
 
 export function SiteFooter() {
   return (
-    <footer className="relative overflow-hidden bg-brand-red text-white">
-      <div className="brand-rings pointer-events-none absolute -bottom-48 -right-40 h-[42rem] w-[42rem] opacity-60" aria-hidden="true" />
+    <footer className="relative overflow-hidden border-t-4 border-brand-red bg-charcoal-950 text-white">
+      <div className="coordinate-grid pointer-events-none absolute inset-0 opacity-25" aria-hidden="true" />
+      <div className="signal-orbit pointer-events-none absolute -bottom-56 -right-48 h-[42rem] w-[42rem] opacity-45" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-[90rem] px-4 pb-8 pt-12 sm:px-6 sm:pt-20 lg:px-8">
         <div className="grid gap-9 border-b border-white/20 pb-10 sm:gap-12 sm:pb-14 lg:grid-cols-[1.2fr_0.55fr_0.55fr] lg:gap-16">

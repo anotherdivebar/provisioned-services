@@ -2,6 +2,17 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+Create a local `.env.local` file with the Cloudflare Turnstile keys used by the
+vendor application:
+
+```bash
+NEXT_PUBLIC_TURNSTILE_SITE_KEY=your_site_key
+TURNSTILE_SECRET_KEY=your_secret_key
+```
+
+Add the same variables to the Vercel project before deploying. The vendor
+application fails closed when either key is unavailable.
+
 First, run the development server:
 
 ```bash

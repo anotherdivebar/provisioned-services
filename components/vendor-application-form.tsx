@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useForm, Controller } from "react-hook-form";
+import { useForm, Controller, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2, Upload } from "lucide-react";
 import {
@@ -28,6 +28,7 @@ import {
   FormSection,
   VENDOR_FORM_SECTIONS,
 } from "@/components/form-section";
+import { TurnstileCaptcha } from "@/components/turnstile-captcha";
 import { FadeUp } from "@/components/motion/animations";
 import { cn } from "@/lib/utils";
 
@@ -80,17 +81,25 @@ function UploadPlaceholder({ label }: { label: string }) {
   );
 }
 
-export function VendorApplicationForm() {
+interface VendorApplicationFormProps {
+  turnstileSiteKey: string;
+}
+
+export function VendorApplicationForm({
+  turnstileSiteKey,
+}: VendorApplicationFormProps) {
   const [submitState, setSubmitState] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [turnstileResetKey, setTurnstileResetKey] = useState(0);
+  const [turnstileError, setTurnstileError] = useState("");
 
   const {
     register,
     handleSubmit,
     control,
-    watch,
     setValue,
     reset,
     formState: { errors },
@@ -105,17 +114,23 @@ export function VendorApplicationForm() {
     },
   });
 
-  const selectedTrades = watch("trades") ?? [];
+  const selectedTrades = useWatch({ control, name: "trades" }) ?? [];
 
   async function onSubmit(data: VendorApplicationFormData) {
+    if (!turnstileToken) {
+      setTurnstileError("Complete the security verification before submitting.");
+      return;
+    }
+
     setSubmitState("loading");
     setErrorMessage("");
+    setTurnstileError("");
 
     try {
       const response = await fetch("/api/vendor-application", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, turnstileToken }),
       });
 
       const result = await response.json();
@@ -123,6 +138,8 @@ export function VendorApplicationForm() {
       if (!response.ok || !result.success) {
         setSubmitState("error");
         setErrorMessage(result.error ?? "Something went wrong. Please try again.");
+        setTurnstileToken("");
+        setTurnstileResetKey((key) => key + 1);
         return;
       }
 
@@ -131,6 +148,8 @@ export function VendorApplicationForm() {
     } catch {
       setSubmitState("error");
       setErrorMessage("Something went wrong. Please try again.");
+      setTurnstileToken("");
+      setTurnstileResetKey((key) => key + 1);
     }
   }
 
@@ -563,33 +582,8 @@ export function VendorApplicationForm() {
         </div>
       </FormSection>
 
-      <FormSection step={5} totalSteps={TOTAL} title="References">
-        <div className="grid gap-5 sm:grid-cols-2 sm:gap-6">
-          {[
-            ["reference1Company", "Reference 1 company *"],
-            ["reference1Contact", "Reference 1 contact *"],
-            ["reference1Info", "Reference 1 phone/email *"],
-            ["reference2Company", "Reference 2 company *"],
-            ["reference2Contact", "Reference 2 contact *"],
-            ["reference2Info", "Reference 2 phone/email *"],
-          ].map(([field, label]) => (
-            <div key={field} className="space-y-2">
-              <Label htmlFor={field}>{label}</Label>
-              <Input id={field} {...register(field as keyof VendorApplicationFormData)} />
-              {errors[field as keyof VendorApplicationFormData] ? (
-                <p className="text-sm text-red-600">
-                  {
-                    errors[field as keyof VendorApplicationFormData]?.message as string
-                  }
-                </p>
-              ) : null}
-            </div>
-          ))}
-        </div>
-      </FormSection>
-
       <FormSection
-        step={6}
+        step={5}
         totalSteps={TOTAL}
         title="Documents"
         description="Upload placeholders — file storage not connected yet."
@@ -602,7 +596,7 @@ export function VendorApplicationForm() {
         </div>
       </FormSection>
 
-      <FormSection step={7} totalSteps={TOTAL} title="Agreement">
+      <FormSection step={6} totalSteps={TOTAL} title="Agreement">
         <div className="space-y-4">
           {(
             [
@@ -641,6 +635,36 @@ export function VendorApplicationForm() {
               Please confirm all compliance items before submitting.
             </p>
           ) : null}
+          <div className="border-t border-navy-100 pt-5">
+            <p className="mb-3 text-sm font-semibold text-navy-950">
+              Security verification *
+            </p>
+            <TurnstileCaptcha
+              siteKey={turnstileSiteKey}
+              resetKey={turnstileResetKey}
+              onVerify={(token) => {
+                setTurnstileToken(token);
+                setTurnstileError("");
+              }}
+              onExpire={() => {
+                setTurnstileToken("");
+                setTurnstileError(
+                  "Security verification expired. Please complete it again."
+                );
+              }}
+              onError={() => {
+                setTurnstileToken("");
+                setTurnstileError(
+                  "Security verification could not load. Please try again."
+                );
+              }}
+            />
+            {turnstileError ? (
+              <p className="mt-2 text-sm text-red-600" role="alert">
+                {turnstileError}
+              </p>
+            ) : null}
+          </div>
         </div>
       </FormSection>
 
@@ -650,7 +674,16 @@ export function VendorApplicationForm() {
         </p>
       ) : null}
 
-      <Button type="submit" size="lg" className="w-full sm:w-auto shadow-lg shadow-amber-500/15" disabled={submitState === "loading"}>
+      <Button
+        type="submit"
+        size="lg"
+        className="w-full shadow-lg shadow-amber-500/15 sm:w-auto"
+        disabled={
+          submitState === "loading" ||
+          !turnstileSiteKey ||
+          !turnstileToken
+        }
+      >
         {submitState === "loading" ? (
           <>
             <Loader2 className="h-4 w-4 animate-spin" />
