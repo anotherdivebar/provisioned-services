@@ -406,7 +406,7 @@ export const CASE_STUDIES = [
   },
   {
     id: "cooler-freezer-restoration",
-    title: "Cooler/Freezer Repair or Restoration Support",
+    title: "Cooler/Freezer Repair",
     projectType: "Refrigeration",
     industry: "Restaurants",
     challenge:
@@ -418,7 +418,7 @@ export const CASE_STUDIES = [
   },
   {
     id: "installation-rollout",
-    title: "Installation or Rollout Project",
+    title: "Multi-Site Rollout Project",
     projectType: "Installation / Rollout",
     industry: "Franchise Groups",
     challenge:
@@ -430,7 +430,7 @@ export const CASE_STUDIES = [
   },
   {
     id: "retail-reimage",
-    title: "Retail Reimage or Rollout Support",
+    title: "Retail Reimage",
     projectType: "Reimage / Rollout",
     industry: "Retail",
     challenge:
