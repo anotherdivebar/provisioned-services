@@ -3,11 +3,17 @@
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
-import { HeroOperationsGraphic } from "@/components/hero-operations-graphic";
 import { easeOut } from "@/components/motion/animations";
 import { HERO_TRUST_POINTS } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+
+const COORDINATION_AREAS = [
+  "Emergency response",
+  "Multi-site maintenance",
+  "Rollouts & refreshes",
+  "Specialty trades",
+] as const;
 
 export function HomeHero() {
   const reduceMotion = useReducedMotion();
@@ -28,7 +34,7 @@ export function HomeHero() {
       />
 
       <div className="relative mx-auto max-w-[90rem] px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24 xl:py-28">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.03fr_0.97fr] lg:gap-16 xl:gap-24">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16 xl:gap-24">
           <div>
             {reduceMotion ? (
               <HeroContent />
@@ -43,7 +49,7 @@ export function HomeHero() {
             )}
           </div>
 
-          <HeroOperationsGraphic />
+          <HeroBrandField />
         </div>
       </div>
 
@@ -80,6 +86,64 @@ export function HomeHero() {
         </div>
       </div>
     </section>
+  );
+}
+
+function HeroBrandField() {
+  return (
+    <aside className="relative hidden min-h-[32rem] lg:flex lg:flex-col lg:justify-between">
+      <div
+        className="signal-orbit pointer-events-none absolute -right-28 -top-24 h-[34rem] w-[34rem] opacity-30"
+        aria-hidden="true"
+      />
+      <div className="relative flex items-center justify-between border-t border-navy-200 pt-4">
+        <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-steel-500">
+          Provisioned Services, Inc.
+        </p>
+        <span className="h-2 w-2 bg-brand-red" aria-hidden="true" />
+      </div>
+
+      <div
+        className="pointer-events-none relative flex flex-1 items-center justify-center overflow-hidden"
+        aria-hidden="true"
+      >
+        <span
+          className="select-none font-sans text-[clamp(10rem,18vw,16rem)] font-bold leading-none tracking-[-0.12em] text-transparent"
+          style={{ WebkitTextStroke: "1px rgba(141, 29, 3, 0.28)" }}
+        >
+          PSI
+        </span>
+        <span className="vertical-label absolute right-1 text-[9px] font-bold uppercase tracking-[0.4em] text-brand-red/45">
+          Facility coordination
+        </span>
+      </div>
+
+      <div>
+        <p className="max-w-md text-xl font-semibold leading-snug tracking-[-0.025em] text-brand-ink">
+          Structured support across locations, trades, and every stage of the
+          work.
+        </p>
+        <ul className="mt-6 grid grid-cols-2 border-y border-navy-200">
+          {COORDINATION_AREAS.map((area, index) => (
+            <li
+              key={area}
+              className={cn(
+                "flex items-center gap-3 py-3 text-xs font-semibold text-steel-700",
+                index % 2 === 0
+                  ? "border-r border-navy-200 pr-4"
+                  : "pl-4",
+                index < 2 && "border-b border-navy-200"
+              )}
+            >
+              <span className="font-mono text-[9px] text-brand-red">
+                0{index + 1}
+              </span>
+              {area}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </aside>
   );
 }
 
