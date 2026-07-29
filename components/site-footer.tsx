@@ -21,7 +21,7 @@ export function SiteFooter() {
             <div className="mt-7 grid gap-3 sm:mt-8 sm:flex sm:flex-wrap">
               <Button asChild className="w-full bg-white text-brand-red hover:bg-brand-cream sm:w-auto">
                 <Link href="/contact">
-                  Request service
+                  Request Service
                   <ArrowUpRight className="h-4 w-4" />
                 </Link>
               </Button>
@@ -61,7 +61,27 @@ export function SiteFooter() {
 
         <div className="mt-7 flex flex-col gap-3 text-xs text-white/55 sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {new Date().getFullYear()} {SITE.name}. All rights reserved.</p>
-          <p className="uppercase tracking-[0.16em]">Facility maintenance · Repairs · Vendor coordination</p>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
+            <a
+              href={SITE.linkedinUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex min-h-11 items-center gap-2 font-semibold text-white/75 transition-colors hover:text-white sm:min-h-0"
+              aria-label="Provisioned Services on LinkedIn"
+            >
+              <span
+                className="flex h-4 w-4 items-center justify-center rounded-[2px] border border-current text-[8px] font-bold leading-none"
+                aria-hidden="true"
+              >
+                in
+              </span>
+              LinkedIn
+              <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+            </a>
+            <p className="uppercase tracking-[0.16em]">
+              Facility Maintenance · Repairs · Vendor Coordination
+            </p>
+          </div>
         </div>
       </div>
     </footer>

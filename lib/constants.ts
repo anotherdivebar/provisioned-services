@@ -5,6 +5,7 @@ export const SITE = {
   email: "info@provisioned.net",
   salesEmail: "sales@provisioned.net",
   phone: "(555) 000-0000",
+  linkedinUrl: "https://www.linkedin.com/company/provisioned-services-inc-",
   vendorPortalUrl: "https://vendor.facilit.fm/Login/Index?c=psi",
 } as const;
 

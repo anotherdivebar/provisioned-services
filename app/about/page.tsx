@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/section-heading";
 import { SectionShell } from "@/components/section-shell";
@@ -8,7 +9,7 @@ import { ProcessTimeline } from "@/components/process-timeline";
 import { FeatureList } from "@/components/enterprise/feature-list";
 import { OpsModules } from "@/components/enterprise/ops-modules";
 import { Button } from "@/components/ui/button";
-import { ORGANIZATION_AREAS } from "@/lib/constants";
+import { ORGANIZATION_AREAS, SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "About",
@@ -81,6 +82,21 @@ export default function AboutPage() {
                 from our clients, and a skilled ability to adapt to any environment
                 or situation.
               </p>
+              <a
+                href={SITE.linkedinUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex min-h-11 items-center gap-2 border-b border-brand-red/35 py-2 text-sm font-semibold text-brand-red transition-colors hover:border-brand-red hover:text-brand-red-dark"
+              >
+                <span
+                  className="flex h-4 w-4 items-center justify-center rounded-[2px] border border-current text-[8px] font-bold leading-none"
+                  aria-hidden="true"
+                >
+                  in
+                </span>
+                Follow Provisioned Services on LinkedIn
+                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+              </a>
             </div>
           </div>
         </div>
