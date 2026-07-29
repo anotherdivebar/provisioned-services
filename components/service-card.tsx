@@ -60,7 +60,7 @@ export function PremiumServiceCard({
 
         <div className="mt-7 border-t border-navy-100 pt-4">
           <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-steel-400">
-            Scope signal
+            Scope Signal
           </p>
           <p className="mt-1.5 text-xs font-semibold text-navy-800">{caption}</p>
         </div>
@@ -69,7 +69,7 @@ export function PremiumServiceCard({
           href="/services"
           className="mt-4 inline-flex min-h-11 items-center justify-between border-t border-navy-100 pt-4 text-sm font-semibold text-navy-900 transition-colors group-hover:text-brand-red"
         >
-          Explore capability
+          Explore Capability
           <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </Link>
       </div>

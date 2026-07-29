@@ -40,7 +40,7 @@ export default function VendorsPage() {
     <>
       <PageHero
         eyebrow="Vendor Network"
-        title="Join the Provisioned vendor network"
+        title="Join the Provisioned Vendor Network"
         description="Provisioned works with responsive, insured, professional service providers to support restaurants, retailers, and multi-site operators. If your team is committed to quality work, we want to learn about your capabilities."
         primaryCta={{ label: "Apply to Be a Vendor", href: "/apply-to-be-a-vendor" }}
         secondaryCta={{ label: "Vendor Portal", href: SITE.vendorPortalUrl }}
@@ -52,14 +52,14 @@ export default function VendorsPage() {
             <div>
               <SectionHeading
                 eyebrow="Who Should Apply"
-                title="Professional service providers ready to partner"
+                title="Professional Service Providers Ready to Partner"
               />
               <FeatureList items={WHO_SHOULD_APPLY} className="mt-6" />
             </div>
             <div>
               <SectionHeading
                 eyebrow="What We Expect"
-                title="Quality, responsiveness, and professionalism"
+                title="Quality, Responsiveness, and Professionalism"
               />
               <FeatureList items={EXPECTATIONS} className="mt-6" />
             </div>
@@ -71,7 +71,7 @@ export default function VendorsPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Partner Benefits"
-            title="What vendors can expect from Provisioned"
+            title="What Vendors Can Expect from Provisioned"
             description="A coordination model designed to respect supplier partners and support quality execution."
           />
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
@@ -96,17 +96,17 @@ export default function VendorsPage() {
             <div>
               <SectionHeading
                 eyebrow="Qualifications"
-                title="Baseline requirements"
+                title="Baseline Requirements"
               />
               <FeatureList items={QUALIFICATIONS} className="mt-6" />
               <Button asChild size="lg" className="mt-8">
-                <Link href="/apply-to-be-a-vendor">Start application</Link>
+                <Link href="/apply-to-be-a-vendor">Start Application</Link>
               </Button>
             </div>
             <div>
               <SectionHeading
                 eyebrow="Service Categories"
-                title="Trades needed across the network"
+                title="Trades Needed Across the Network"
                 description="Select all applicable trades when you apply. Review is based on current client needs and coverage."
               />
               <div className="mt-8 grid gap-2.5 sm:grid-cols-2">
@@ -125,7 +125,7 @@ export default function VendorsPage() {
       </SectionShell>
 
       <CtaBand
-        title="Ready to apply?"
+        title="Ready to Apply?"
         description="Complete the vendor application with your company details, capabilities, and coverage area."
         primaryCta={{ label: "Apply to Be a Vendor", href: "/apply-to-be-a-vendor" }}
       />

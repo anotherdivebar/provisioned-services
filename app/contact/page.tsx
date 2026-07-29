@@ -17,7 +17,7 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Request service"
+        title="Request Service"
         description="Tell us what is happening, where it is happening, and how quickly you need support."
       />
 
@@ -27,7 +27,7 @@ export default function ContactPage() {
             <div className="lg:col-span-3">
               <div className="mb-8">
                 <h2 className="text-xl font-bold text-navy-950">
-                  Service request form
+                  Service Request Form
                 </h2>
                 <p className="mt-2 text-sm leading-relaxed text-steel-600">
                   A few essentials are enough to get the conversation started.
@@ -39,7 +39,7 @@ export default function ContactPage() {
 
             <aside className="lg:col-span-2">
               <div className="enterprise-card bg-off-white p-6">
-                <SectionHeading title="Direct contact" />
+                <SectionHeading title="Direct Contact" />
                 <dl className="mt-6 space-y-5 text-sm">
                   <div>
                     <dt className="text-[10px] font-bold uppercase tracking-[0.18em] text-steel-500">
@@ -47,10 +47,10 @@ export default function ContactPage() {
                     </dt>
                     <dd className="mt-1.5">
                       <a
-                        href={`mailto:${SITE.email}`}
+                        href={`mailto:${SITE.salesEmail}`}
                         className="inline-flex min-h-11 items-center py-2 font-medium text-navy-950 hover:text-amber-600"
                       >
-                        {SITE.email}
+                        {SITE.salesEmail}
                       </a>
                     </dd>
                   </div>
@@ -58,7 +58,7 @@ export default function ContactPage() {
               </div>
 
               <div className="enterprise-card mt-6 p-6">
-                <SectionHeading title="What to expect" />
+                <SectionHeading title="What to Expect" />
                 <FeatureList items={CONTACT_ASSURANCES} className="mt-4" />
               </div>
             </aside>

@@ -16,8 +16,8 @@ interface CaseStudyCardProps {
 
 const BRIEF_ROWS = [
   { key: "challenge", number: "01", label: "Challenge" },
-  { key: "solution", number: "02", label: "Coordinated response" },
-  { key: "outcome", number: "03", label: "Operational outcome" },
+  { key: "solution", number: "02", label: "Coordinated Response" },
+  { key: "outcome", number: "03", label: "Operational Outcome" },
 ] as const;
 
 export function CaseStudyCard({
@@ -83,7 +83,7 @@ export function CaseStudyCard({
           href={href}
           className="inline-flex min-h-11 w-full items-center justify-between text-sm font-semibold text-navy-900 transition-colors group-hover:text-brand-red"
         >
-          Discuss a similar project
+          Discuss a Similar Project
           <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </Link>
       </div>

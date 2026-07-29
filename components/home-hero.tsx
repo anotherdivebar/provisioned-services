@@ -9,10 +9,10 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const COORDINATION_AREAS = [
-  "Emergency response",
-  "Multi-site maintenance",
-  "Rollouts & refreshes",
-  "Specialty trades",
+  "Emergency Response",
+  "Multi-Site Maintenance",
+  "Rollouts & Refreshes",
+  "Specialty Trades",
 ] as const;
 
 export function HomeHero() {
@@ -114,7 +114,7 @@ function HeroBrandField() {
           PSI
         </span>
         <span className="vertical-label absolute right-1 text-[9px] font-bold uppercase tracking-[0.4em] text-brand-red/45">
-          Facility coordination
+          Facility Coordination
         </span>
       </div>
 
@@ -152,13 +152,13 @@ function HeroContent() {
     <>
       <div className="inline-flex items-center gap-3 border-l-2 border-brand-red pl-3">
         <span className="font-mono text-[10px] font-bold uppercase tracking-[0.24em] text-brand-red">
-          PSI / Facility operations
+          PSI / Facility Operations
         </span>
       </div>
 
       <h1 className="mt-7 max-w-4xl text-[clamp(3.4rem,7.4vw,7.4rem)] font-semibold leading-[0.86] tracking-[-0.07em] text-brand-ink">
-        Keep every
-        <span className="block text-brand-red">location moving.</span>
+        Keep Every
+        <span className="block text-brand-red">Location Moving.</span>
       </h1>
 
       <p className="mt-7 max-w-2xl text-base leading-relaxed text-steel-700 sm:text-lg lg:text-xl">
@@ -170,17 +170,17 @@ function HeroContent() {
       <div className="mt-9 flex flex-col gap-3 sm:flex-row">
         <Button asChild size="lg" className="group">
           <Link href="/contact">
-            Request service
+            Request Service
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </Button>
         <Button asChild variant="outline" size="lg">
-          <Link href="/services">Explore capabilities</Link>
+          <Link href="/services">Explore Capabilities</Link>
         </Button>
       </div>
 
       <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-navy-200 pt-5">
-        {["Clear scope", "Responsive dispatch", "Accountable closeout"].map(
+        {["Clear Scope", "Responsive Dispatch", "Accountable Closeout"].map(
           (item) => (
             <span
               key={item}

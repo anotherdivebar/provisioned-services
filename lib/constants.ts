@@ -3,6 +3,7 @@ export const SITE = {
   shortName: "Provisioned Services",
   tagline: "Facility Support for Brands That Can't Afford Downtime.",
   email: "info@provisioned.net",
+  salesEmail: "sales@provisioned.net",
   phone: "(555) 000-0000",
   vendorPortalUrl: "https://vendor.facilit.fm/Login/Index?c=psi",
 } as const;
@@ -17,20 +18,20 @@ export const NAV_LINKS = [
 ] as const;
 
 export const TRUST_STRIP_ITEMS = [
-  "Facility maintenance",
-  "Emergency repairs",
-  "Rollouts & installations",
-  "Cooler/freezer work",
-  "Flooring solutions",
-  "Vendor coordination",
+  "Facility Maintenance",
+  "Emergency Repairs",
+  "Rollouts & Installations",
+  "Cooler/Freezer Work",
+  "Flooring Solutions",
+  "Vendor Coordination",
 ] as const;
 
 export const HERO_TRUST_POINTS = [
-  "Multi-site facility support",
-  "Restaurant & retail experience",
-  "Emergency response",
-  "Project coordination",
-  "Vendor network support",
+  "Multi-Site Facility Support",
+  "Restaurant & Retail Experience",
+  "Emergency Response",
+  "Project Coordination",
+  "Vendor Network Support",
 ] as const;
 
 export const WHAT_WE_DO = [
@@ -118,22 +119,22 @@ export const WHAT_WE_DO = [
 
 export const VENDOR_BENEFITS = [
   {
-    title: "Clear scopes",
+    title: "Clear Scopes",
     description:
       "Defined work packages and expectations before dispatch—no ambiguity on site.",
   },
   {
-    title: "Professional coordination",
+    title: "Professional Coordination",
     description:
       "Organized communication, scheduling, and closeout that respects your time.",
   },
   {
-    title: "Long-term partnership potential",
+    title: "Long-Term Partnership Potential",
     description:
       "Opportunities aligned to your trade, coverage area, and quality standards.",
   },
   {
-    title: "Quality-driven work",
+    title: "Quality-Driven Work",
     description:
       "Client environments where responsiveness, professionalism, and execution matter.",
   },
@@ -275,42 +276,42 @@ export const INDUSTRIES = [
 
 export const WHY_PROVISIONED = [
   {
-    title: "One accountable partner",
+    title: "One Accountable Partner",
     description:
       "A single point of coordination instead of juggling multiple vendors and follow-ups.",
   },
   {
-    title: "Fast response",
+    title: "Fast Response",
     description:
       "Structured intake and dispatch when locations need action, not another ticket in a queue.",
   },
   {
-    title: "Clear communication",
+    title: "Clear Communication",
     description:
       "Scopes, timelines, and status updates that operations teams can act on.",
   },
   {
-    title: "Disciplined project coordination",
+    title: "Disciplined Project Coordination",
     description:
       "From intake through validation and closeout, work stays organized and accountable.",
   },
   {
-    title: "Reliable service-provider relationships",
+    title: "Reliable Service-Provider Relationships",
     description:
       "A vetted vendor network aligned to quality, responsiveness, and professional standards.",
   },
   {
-    title: "Reduced operational disruption",
+    title: "Reduced Operational Disruption",
     description:
       "Planning and execution built for brands that cannot afford extended downtime.",
   },
   {
-    title: "Practical support from intake to closeout",
+    title: "Practical Support from Intake to Closeout",
     description:
       "Real-world facility coordination—not generic handyman promises.",
   },
   {
-    title: "Built for active business environments",
+    title: "Built for Active Business Environments",
     description:
       "Experience supporting restaurants, retail, and multi-site operators under pressure.",
   },
@@ -536,22 +537,22 @@ export const SERVICES = [
 ] as const;
 
 export const TRADE_CARDS = [
-  "HVAC coordination",
+  "HVAC Coordination",
   "Electrical",
   "Plumbing",
   "Lighting",
   "Flooring",
-  "Doors & hardware",
+  "Doors & Hardware",
   "Painting",
-  "General repairs",
-  "Exterior maintenance",
-  "Foodservice equipment support",
-  "Cooler / freezer support",
-  "Signage coordination",
-  "Site refreshes",
+  "General Repairs",
+  "Exterior Maintenance",
+  "Food Service Equipment Support",
+  "Cooler / Freezer Support",
+  "Signage Coordination",
+  "Site Refreshes",
   "Carpentry",
-  "Roofing coordination",
-  "Punch list work",
+  "Roofing Coordination",
+  "Punch List Work",
 ] as const;
 
 export const VENDOR_TRADES = [
@@ -560,17 +561,17 @@ export const VENDOR_TRADES = [
   "Plumbing",
   "Lighting",
   "Flooring",
-  "Doors / hardware",
+  "Doors / Hardware",
   "Painting",
-  "General maintenance",
+  "General Maintenance",
   "Carpentry",
   "Roofing",
-  "Exterior maintenance",
-  "Foodservice equipment",
-  "Refrigeration / cooler / freezer",
+  "Exterior Maintenance",
+  "Food Service Equipment",
+  "Refrigeration / Cooler / Freezer",
   "Signage",
-  "Remodels / refreshes",
-  "Emergency repairs",
+  "Remodels / Refreshes",
+  "Emergency Repairs",
   "Installations",
   "Rollouts",
   "Other",
@@ -594,10 +595,10 @@ export const URGENCY_OPTIONS = [
 export const INDUSTRY_OPTIONS = [
   "Restaurants",
   "Retail",
-  "Fitness clubs",
-  "Veterinary clinics",
-  "Franchise groups",
-  "Multi-site operators",
+  "Fitness Clubs",
+  "Veterinary Clinics",
+  "Franchise Groups",
+  "Multi-Site Operators",
   "Other",
 ] as const;
 
@@ -626,7 +627,7 @@ export const FAQ_ITEMS = [
 
 export const ENTERPRISE_PROOF = [
   {
-    label: "Designed for",
+    label: "Designed For",
     detail: "Restaurant, retail, franchise, and multi-site portfolios",
   },
   {
@@ -634,33 +635,33 @@ export const ENTERPRISE_PROOF = [
     detail: "Emergency response through planned rollouts and refreshes",
   },
   {
-    label: "Coordinated across",
+    label: "Coordinated Across",
     detail: "HVAC, refrigeration, flooring, and general facility trades",
   },
   {
-    label: "Accountability through",
+    label: "Accountability Through",
     detail: "Intake, scope, dispatch, execution, validation, and closeout",
   },
 ] as const;
 
 export const OPERATIONAL_MODULES = [
   {
-    title: "Multi-site coordination",
+    title: "Multi-Site Coordination",
     description:
       "Built to support operators managing facility work across many locations through a structured intake and dispatch model.",
   },
   {
-    title: "Emergency response readiness",
+    title: "Emergency Response Readiness",
     description:
       "Designed for urgent repairs and rapid-response situations where downtime directly affects revenue and operations.",
   },
   {
-    title: "Trade and vendor orchestration",
+    title: "Trade and Vendor Orchestration",
     description:
       "Coordinates qualified service partners across facility disciplines with clear scope and follow-through.",
   },
   {
-    title: "Project closeout discipline",
+    title: "Project Closeout Discipline",
     description:
       "Work is validated against scope and documented so facilities teams have accountability from request to completion.",
   },

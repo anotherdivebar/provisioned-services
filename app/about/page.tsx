@@ -28,36 +28,58 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About"
-        title="Facility coordination for operators under pressure"
+        title="Facility Coordination for Operators Under Pressure"
         description="Provisioned Services supports brands and operators that need facility problems handled quickly, professionally, and with minimal disruption—across maintenance, repairs, installations, rollouts, cooler and freezer work, flooring, rapid response, and vendor coordination."
         primaryCta={{ label: "Request Service", href: "/contact" }}
       />
 
       <SectionShell tone="light" className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="grid gap-10 sm:gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
             <div>
               <SectionHeading
-                eyebrow="Who We Are"
-                title="A coordination partner for active commercial environments"
+                eyebrow="Our Story"
+                title="Founded in Wichita. Built to Support Clients Nationwide."
               />
-              <p className="prose-enterprise mt-6">
-                Provisioned was built for operators who cannot afford extended
-                downtime. We support restaurants, retailers, franchise groups, and
-                multi-site portfolios with practical facility coordination—from
-                emergency repairs to planned rollouts.
-              </p>
+              <dl className="mt-8 grid grid-cols-3 border-y border-steel-200">
+                <div className="py-5">
+                  <dt className="text-2xl font-semibold text-navy-950">2005</dt>
+                  <dd className="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-steel-500">
+                    Founded
+                  </dd>
+                </div>
+                <div className="border-x border-steel-200 px-4 py-5">
+                  <dt className="text-sm font-semibold leading-tight text-navy-950 sm:text-base">
+                    Wichita, KS
+                  </dt>
+                  <dd className="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-steel-500">
+                    Based
+                  </dd>
+                </div>
+                <div className="py-5 pl-4">
+                  <dt className="text-sm font-semibold leading-tight text-navy-950 sm:text-base">
+                    Nationwide
+                  </dt>
+                  <dd className="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-steel-500">
+                    Coverage
+                  </dd>
+                </div>
+              </dl>
             </div>
-            <div>
-              <SectionHeading
-                eyebrow="What We Do"
-                title="Maintenance, projects, and vendor coordination"
-              />
-              <p className="prose-enterprise mt-6">
-                Our work spans day-to-day maintenance, emergency response, cooler
-                and freezer support, flooring, installations, remodels, and
-                multi-location programs. We coordinate service partners and maintain
-                clear accountability from intake to closeout.
+            <div className="space-y-5 lg:pt-1">
+              <p className="prose-enterprise">
+                Founded in 2005 and based in Wichita, KS, we’re a full-service
+                facilities maintenance and management company working across the
+                U.S. Our experienced project management team partners with our
+                technicians to serve our clients nationwide, including retailers,
+                restaurants, fitness clubs, and veterinary clinics.
+              </p>
+              <p className="prose-enterprise">
+                We’ve built a solid foundation taking care of our supplier partners
+                across the US so they will take care of us and our clients. Trust us
+                for the dedicated and rapid response that earns us repeat business
+                from our clients, and a skilled ability to adapt to any environment
+                or situation.
               </p>
             </div>
           </div>
@@ -68,7 +90,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="How We Operate"
-            title="Disciplined coordination from intake to closeout"
+            title="Disciplined Coordination from Intake to Closeout"
             description="Designed for facilities teams that need work handled without adding chaos."
           />
           <div className="mt-10">
@@ -81,7 +103,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Process"
-            title="Consistent execution across every request"
+            title="Consistent Execution Across Every Request"
           />
           <div className="mt-10 sm:mt-12">
             <ProcessTimeline />
@@ -95,14 +117,14 @@ export default function AboutPage() {
             <div>
               <SectionHeading
                 eyebrow="Why Clients Work With Provisioned"
-                title="Relationship-driven support with operational discipline"
+                title="Relationship-Driven Support with Operational Discipline"
               />
               <FeatureList items={TRUST_POINTS} className="mt-6" />
             </div>
             <div>
               <SectionHeading
                 eyebrow="Service Partner Philosophy"
-                title="Strong outcomes depend on strong vendors"
+                title="Strong Outcomes Depend on Strong Vendors"
               />
               <p className="prose-enterprise mt-6">
                 Provisioned values service partners who are responsive,
@@ -111,7 +133,7 @@ export default function AboutPage() {
                 long-term partnership in mind.
               </p>
               <Button asChild className="mt-6">
-                <Link href="/vendors">Explore the vendor network</Link>
+                <Link href="/vendors">Explore the Vendor Network</Link>
               </Button>
             </div>
           </div>
@@ -122,7 +144,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Organization"
-            title="How we are structured to support clients"
+            title="How We Are Structured to Support Clients"
             description="Functional areas focused on operator coordination, project execution, and vendor network management."
           />
           <div className="mt-10 grid gap-5 md:grid-cols-3">
@@ -144,7 +166,7 @@ export default function AboutPage() {
       </SectionShell>
 
       <CtaBand
-        title="Ready to discuss facility support for your locations?"
+        title="Ready to Discuss Facility Support for Your Locations?"
         primaryCta={{ label: "Request Service", href: "/contact" }}
         secondaryCta={{ label: "Apply to Be a Vendor", href: "/apply-to-be-a-vendor" }}
       />

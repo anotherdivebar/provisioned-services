@@ -17,7 +17,7 @@ export default function ProjectsPage() {
     <>
       <PageHero
         eyebrow="Projects"
-        title="Representative facility work across maintenance, response, and rollouts"
+        title="Representative Facility Work Across Maintenance, Response, and Rollouts"
         description="These examples illustrate the types of facility challenges Provisioned is built to support. They are representative scenarios—not named client engagements."
         primaryCta={{ label: "Request Service", href: "/contact" }}
       />
@@ -26,7 +26,7 @@ export default function ProjectsPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Project Examples"
-            title="How Provisioned supports complex facility work"
+            title="How Provisioned Supports Complex Facility Work"
             description="Each example follows a consistent structure: challenge, coordinated solution, and operational outcome."
           />
           <div className="mt-10 grid gap-5 sm:mt-12 lg:grid-cols-2">
@@ -38,7 +38,7 @@ export default function ProjectsPage() {
       </SectionShell>
 
       <CtaBand
-        title="Facing a similar facility challenge?"
+        title="Facing a Similar Facility Challenge?"
         description="Tell us about your locations, urgency, and scope. Our team will follow up to discuss fit and coverage."
         primaryCta={{ label: "Request Service", href: "/contact" }}
       />

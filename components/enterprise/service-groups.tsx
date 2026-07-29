@@ -39,7 +39,7 @@ export function ServiceGroups() {
               </ul>
               <aside className="bg-off-white px-5 py-4 sm:px-8 sm:py-5 lg:py-6">
                 <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-amber-600">
-                  Operational outcome
+                  Operational Outcome
                 </p>
                 <p className="mt-2 text-sm font-medium leading-relaxed text-navy-900">
                   {group.outcome}

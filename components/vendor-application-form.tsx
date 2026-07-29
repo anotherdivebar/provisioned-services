@@ -176,7 +176,7 @@ export function VendorApplicationForm({
           <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500/15 text-2xl font-bold text-emerald-600">
             ✓
           </div>
-          <h3 className="text-2xl font-bold text-navy-950">Thanks for applying.</h3>
+          <h3 className="text-2xl font-bold text-navy-950">Thanks for Applying.</h3>
           <p className="mx-auto mt-3 max-w-md text-steel-600">
             Our team will review your information and follow up if your services
             align with current client needs.

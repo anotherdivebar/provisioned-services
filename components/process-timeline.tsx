@@ -90,7 +90,7 @@ export function ProcessTimeline() {
           <div className="grid items-center gap-8 lg:grid-cols-2">
             <div>
               <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-amber-400">
-                Active step
+                Active Step
               </p>
               <p className="mt-2 text-3xl font-bold">{PROCESS_STEPS[active].title}</p>
               <p className="mt-3 text-steel-300">{PROCESS_STEPS[active].description}</p>

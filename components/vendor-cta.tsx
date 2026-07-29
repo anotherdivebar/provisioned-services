@@ -20,7 +20,7 @@ export function VendorCTA() {
             <SectionHeading
               light
               eyebrow="Vendor Network"
-              title="Great client outcomes start with great service partners."
+              title="Great Client Outcomes Start with Great Service Partners."
               description="Provisioned works with responsive, insured, professional vendors to support active restaurants, retailers, and multi-site operators."
             />
             <Button asChild size="lg" className="mt-8 bg-white text-brand-red hover:bg-brand-cream">

@@ -26,7 +26,7 @@ export function SiteFooter() {
                 </Link>
               </Button>
               <Button asChild variant="secondary" className="w-full sm:w-auto">
-                <Link href="/apply-to-be-a-vendor">Join the vendor network</Link>
+                <Link href="/apply-to-be-a-vendor">Join the Vendor Network</Link>
               </Button>
             </div>
           </div>
@@ -45,7 +45,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-white/55">Start here</p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-white/55">Start Here</p>
             <p className="mt-5 text-sm leading-relaxed text-white/72">
               Tell us the location, issue, and timing. We will follow up to determine fit and coverage.
             </p>

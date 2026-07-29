@@ -128,7 +128,7 @@ function DefaultPageHeroPanel({ eyebrow }: { eyebrow: string }) {
       <div className="relative">
         <div className="flex items-center justify-between border-b border-white/10 pb-4">
           <p className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-white/45">
-            Operating system
+            Operating System
           </p>
           <p className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-brand-red-light">
             {eyebrow}
@@ -136,7 +136,7 @@ function DefaultPageHeroPanel({ eyebrow }: { eyebrow: string }) {
         </div>
 
         <p className="mt-8 max-w-sm text-3xl font-semibold leading-[1] tracking-[-0.045em]">
-          One accountable path from request to resolution.
+          One Accountable Path from Request to Resolution.
         </p>
 
         <ol className="mt-8 grid grid-cols-2 gap-px bg-white/10">
@@ -151,7 +151,7 @@ function DefaultPageHeroPanel({ eyebrow }: { eyebrow: string }) {
         </ol>
 
         <div className="mt-5 flex items-center justify-between border-t border-white/10 pt-4 text-[9px] font-bold uppercase tracking-[0.18em] text-white/35">
-          <span>Multi-site ready</span>
+          <span>Multi-Site Ready</span>
           <span>PSI / Coordinated</span>
         </div>
       </div>

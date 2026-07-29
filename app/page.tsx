@@ -26,14 +26,14 @@ export default function HomePage() {
           <FadeUp>
             <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
               <SectionHeading
-                eyebrow="Core capabilities"
+                eyebrow="Core Capabilities"
                 sectionNumber="01"
-                title="One call covers the work that keeps locations open."
+                title="One Call Covers the Work That Keeps Locations Open."
                 description="Responsive support across the facility services operators rely on most."
               />
               <Button asChild variant="outline" size="lg" className="w-fit shrink-0">
                 <Link href="/services">
-                  Explore all services
+                  Explore All Services
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
@@ -55,9 +55,9 @@ export default function HomePage() {
             <FadeUp>
               <SectionHeading
                 light
-                eyebrow="The PSI standard"
+                eyebrow="The PSI Standard"
                 sectionNumber="02"
-                title="Facility support should feel clear—even when the problem is not."
+                title="Facility Support Should Feel Clear—Even When the Problem Is Not."
               />
               <blockquote className="mt-8 border-l-2 border-amber-400 pl-5">
                 <p className="text-lg font-medium leading-relaxed text-white/90">
@@ -65,7 +65,7 @@ export default function HomePage() {
                   for brands that cannot afford downtime.”
                 </p>
                 <footer className="mt-4 text-[10px] font-bold uppercase tracking-[0.22em] text-amber-400">
-                  Provisioned operating standard
+                  Provisioned Operating Standard
                 </footer>
               </blockquote>
             </FadeUp>
@@ -96,14 +96,14 @@ export default function HomePage() {
           <FadeUp>
             <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
               <SectionHeading
-                eyebrow="Example engagements"
+                eyebrow="Example Engagements"
                 sectionNumber="03"
-                title="A clear view of how the work gets handled."
+                title="A Clear View of How the Work Gets Handled."
                 description="Illustrative project scenarios structured around the challenge, coordinated response, and operational outcome."
               />
               <Button asChild variant="outline" size="lg" className="w-fit shrink-0">
                 <Link href="/projects">
-                  View all project examples
+                  View All Project Examples
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
@@ -124,7 +124,7 @@ export default function HomePage() {
 
       <CtaBand
         variant="final"
-        title="Keep the next facility issue from becoming the next operational setback."
+        title="Keep the Next Facility Issue from Becoming the Next Operational Setback."
         description="Tell us what is happening, where it is happening, and how quickly you need support."
         primaryCta={{ label: "Request Service", href: "/contact" }}
         secondaryCta={{ label: "Explore Services", href: "/services" }}

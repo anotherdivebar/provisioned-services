@@ -21,14 +21,14 @@ export default function ApplyToBeAVendorPage() {
     <>
       <PageHero
         eyebrow="Vendor Application"
-        title="Apply to be a vendor"
+        title="Apply to Be a Vendor"
         description="Tell us about your company, capabilities, coverage area, and qualifications. Our team reviews each submission and follows up when your services align with current client needs."
       />
 
       <SectionShell tone="muted" className="py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8 enterprise-card p-5 sm:mb-10 sm:p-8">
-            <h2 className="text-lg font-bold text-navy-950">Before you begin</h2>
+            <h2 className="text-lg font-bold text-navy-950">Before You Begin</h2>
             <FeatureList items={APPLICATION_NOTES} className="mt-4" />
           </div>
           <VendorApplicationForm

@@ -78,7 +78,7 @@ export function ContactForm() {
         role="status"
       >
         <h3 className="text-xl font-semibold text-navy-950">
-          Thanks for reaching out.
+          Thanks for Reaching Out.
         </h3>
         <p className="mt-3 text-steel-600">
           Our team will review your request and follow up shortly.
@@ -89,7 +89,7 @@ export function ContactForm() {
           className="mt-6"
           onClick={() => setSubmitState("idle")}
         >
-          Submit another request
+          Submit Another Request
         </Button>
       </div>
     );

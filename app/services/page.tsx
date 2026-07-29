@@ -19,7 +19,7 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Services"
-        title="Facility support and project coordination for multi-site operators"
+        title="Facility Support and Project Coordination for Multi-Site Operators"
         description="From day-to-day maintenance to emergency response, rollouts, and vendor coordination—Provisioned delivers responsive facility support with clear scope and accountable closeout."
         primaryCta={{ label: "Request Service", href: "/contact" }}
       />
@@ -28,7 +28,7 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Service Catalog"
-            title="Grouped by operational need"
+            title="Grouped by Operational Need"
             description="Services organized by how operators typically plan, prioritize, and execute facility work."
           />
           <div className="mt-10 sm:mt-12">
@@ -41,7 +41,7 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Trades & Capabilities"
-            title="Coordinated service disciplines"
+            title="Coordinated Service Disciplines"
             description="Provisioned coordinates qualified service partners across the trades operators rely on."
           />
           <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -61,7 +61,7 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <SectionHeading
             align="center"
-            title="Discuss your next facility project"
+            title="Discuss Your Next Facility Project"
             description="Share your locations, urgency, and scope. We will follow up to determine fit and coverage."
           />
           <Button asChild size="lg" className="mt-8">
@@ -71,7 +71,7 @@ export default function ServicesPage() {
       </SectionShell>
 
       <CtaBand
-        title="Qualified vendors strengthen every outcome."
+        title="Qualified Vendors Strengthen Every Outcome."
         description="If you are a licensed, insured service provider, apply to join the Provisioned network."
         primaryCta={{ label: "Apply to Be a Vendor", href: "/apply-to-be-a-vendor" }}
       />

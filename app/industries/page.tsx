@@ -18,7 +18,7 @@ export default function IndustriesPage() {
     <>
       <PageHero
         eyebrow="Industries"
-        title="Facility support aligned to your operating environment"
+        title="Facility Support Aligned to Your Operating Environment"
         description="Provisioned supports operators across restaurants, retail, fitness, veterinary, franchise, and multi-site portfolios—with coordination built for active business environments."
         primaryCta={{ label: "Request Service", href: "/contact" }}
       />
@@ -34,11 +34,14 @@ export default function IndustriesPage() {
               >
                 <div>
                   <p className="font-mono text-[11px] font-bold text-amber-600">
-                    {String(index + 1).padStart(2, "0")} · {industry.title}
+                    Industry {String(index + 1).padStart(2, "0")}
                   </p>
                   <h2 className="mt-3 text-2xl font-bold leading-snug text-navy-950 sm:text-3xl">
-                    {industry.description}
+                    {industry.title}
                   </h2>
+                  <p className="mt-4 text-lg leading-relaxed text-steel-700">
+                    {industry.description}
+                  </p>
                   <p className="prose-enterprise mt-5">{industry.howWeHelp}</p>
                   <Button asChild className="mt-6">
                     <Link href="/contact">Request Service</Link>
@@ -48,14 +51,14 @@ export default function IndustriesPage() {
                 <div className="grid gap-5">
                   <div className="enterprise-card bg-off-white p-5 sm:p-6">
                     <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-navy-950">
-                      Common pain points
+                      Common Pain Points
                     </h3>
                     <FeatureList items={industry.painPoints} className="mt-4" />
                   </div>
 
                   <div className="enterprise-card p-5 sm:p-6">
                     <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-navy-950">
-                      Example services
+                      Example Services
                     </h3>
                     <FeatureList items={industry.services} className="mt-4" />
                   </div>
@@ -67,7 +70,7 @@ export default function IndustriesPage() {
       </SectionShell>
 
       <CtaBand
-        title="Need responsive facility support across your portfolio?"
+        title="Need Responsive Facility Support Across Your Portfolio?"
         primaryCta={{ label: "Request Service", href: "/contact" }}
         secondaryCta={{ label: "View Services", href: "/services" }}
       />
