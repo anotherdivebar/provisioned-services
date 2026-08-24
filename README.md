@@ -2,20 +2,23 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-Create a local `.env.local` file with the Cloudflare Turnstile keys used by the
-vendor application and the Resend credentials used by the service-request form:
+Create a local `.env.local` file with the Cloudflare Turnstile keys and the
+Resend credentials used by both website forms:
 
 ```bash
 NEXT_PUBLIC_TURNSTILE_SITE_KEY=your_site_key
 TURNSTILE_SECRET_KEY=your_secret_key
 RESEND_API_KEY=your_resend_api_key
-CONTACT_FORM_FROM_EMAIL="Provisioned Services Website <website@provisioned.net>"
+CONTACT_FORM_FROM_EMAIL="Provisioned Services Website <website@send.provisioned.net>"
 ```
 
-Add the same variables to the Vercel project before deploying. The vendor
-application fails closed when either Turnstile key is unavailable. The
-service-request form sends to `sales@provisioned.net` and returns an actionable
-error instead of reporting a false success when email delivery is not configured.
+`CONTACT_FORM_FROM_EMAIL` is the verified sender shown in the email's From
+field; it is not the destination inbox. Add the same variables to the Vercel
+project before deploying. The vendor application fails closed when either
+Turnstile key is unavailable, sends applications to `info@provisioned.net`, and
+does not write application details to runtime logs. The service-request form
+sends to `sales@provisioned.net`. Both forms return an actionable error instead
+of reporting a false success when email delivery is not configured.
 
 First, run the development server:
 
